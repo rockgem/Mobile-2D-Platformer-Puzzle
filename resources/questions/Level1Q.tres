@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://resources/questions/Question.gd" type="Script" id=1]
+[ext_resource path="res://resources/answers/Level1/Level1B.tres" type="Resource" id=2]
+[ext_resource path="res://resources/answers/Level1/Level1A.tres" type="Resource" id=3]
+[ext_resource path="res://resources/answers/Level1/Level1D.tres" type="Resource" id=4]
+[ext_resource path="res://resources/answers/Level1/Level1C.tres" type="Resource" id=5]
+
+[resource]
+script = ExtResource( 1 )
+question = "Kung sino man ang ________ ng impormasyon tungkol sa taong hinahanap sa larawan ay gagantimpalaan ng sampung-libong piso."
+answers = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 4 ) ]
+correctAnswer = ExtResource( 2 )

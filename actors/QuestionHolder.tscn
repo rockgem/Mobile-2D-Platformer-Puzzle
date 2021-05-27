@@ -1,0 +1,99 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://resources/Panel2.tres" type="StyleBox" id=1]
+[ext_resource path="res://scripts/QuestionHolder.gd" type="Script" id=2]
+[ext_resource path="res://images/sprites/key sprites/2.png" type="Texture" id=3]
+[ext_resource path="res://images/sprites/key sprites/4.png" type="Texture" id=4]
+[ext_resource path="res://images/sprites/key sprites/5.png" type="Texture" id=5]
+[ext_resource path="res://images/sprites/key sprites/6.png" type="Texture" id=6]
+[ext_resource path="res://images/sprites/key sprites/7.png" type="Texture" id=7]
+[ext_resource path="res://images/sprites/key sprites/8.png" type="Texture" id=8]
+[ext_resource path="res://images/sprites/key sprites/1.png" type="Texture" id=9]
+[ext_resource path="res://images/sprites/key sprites/3.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=2]
+resource_name = "correctAnswerAnimate"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 1, 0.298039, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 1, 0.298039, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 1, 0.298039, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 1, 0.298039, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 1, 0.298039, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "wrongAnswerAnimate"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[node name="QuestionHolder" type="Panel"]
+margin_right = 134.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 134, 44 )
+custom_styles/panel = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 35.0
+margin_top = 8.0
+margin_right = -16.0
+margin_bottom = -8.0
+size_flags_vertical = 5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "sample answer"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 11.0
+margin_top = 16.0
+margin_right = 21.0
+margin_bottom = 27.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedKey" type="AnimatedSprite" parent="."]
+position = Vector2( 29, 20 )
+frames = SubResource( 1 )
+frame = 2
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/correctAnswerAnimate = SubResource( 2 )
+anims/wrongAnswerAnimate = SubResource( 3 )
+
+[connection signal="gui_input" from="." to="." method="_on_QuestionHolder_gui_input"]

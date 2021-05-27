@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://resources/questions/Question.gd" type="Script" id=1]
+[ext_resource path="res://resources/answers/Level 2/Level2A.tres" type="Resource" id=2]
+[ext_resource path="res://resources/answers/Level 2/Level2B.tres" type="Resource" id=3]
+[ext_resource path="res://resources/answers/Level 2/Level2D.tres" type="Resource" id=4]
+[ext_resource path="res://resources/answers/Level 2/Level2C.tres" type="Resource" id=5]
+
+[resource]
+script = ExtResource( 1 )
+question = "_________ mo na ba yung text sa atin ni Ms. Tapas sa telepono?"
+answers = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ) ]
+correctAnswer = ExtResource( 4 )

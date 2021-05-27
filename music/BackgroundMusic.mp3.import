@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/BackgroundMusic.mp3-04a48bdf2ce91995439f1168bbe74175.mp3str"
+
+[deps]
+
+source_file="res://music/BackgroundMusic.mp3"
+dest_files=[ "res://.import/BackgroundMusic.mp3-04a48bdf2ce91995439f1168bbe74175.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

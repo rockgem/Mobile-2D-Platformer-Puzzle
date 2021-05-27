@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://resources/dialogs/Dialog.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+text = [ "Nakita kita", "Sa isang magasin", "Dilaw ang iyong suot at, buhok mo'y green" ]

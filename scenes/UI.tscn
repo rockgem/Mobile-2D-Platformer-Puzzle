@@ -1,0 +1,457 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://scripts/UI.gd" type="Script" id=1]
+[ext_resource path="res://actors/InventorySlot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://images/green_tick.png" type="Texture" id=3]
+[ext_resource path="res://images/sprites/blue_circle.png" type="Texture" id=4]
+[ext_resource path="res://scripts/TouchScreenButton.gd" type="Script" id=5]
+[ext_resource path="res://images/2.png" type="Texture" id=6]
+[ext_resource path="res://images/5.png" type="Texture" id=7]
+[ext_resource path="res://resources/Panel3.tres" type="StyleBox" id=8]
+[ext_resource path="res://images/hpbar/over.png" type="Texture" id=9]
+[ext_resource path="res://resources/Silver.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://images/sprites/09-Idle Sword/Idle Sword 01.png" type="Texture" id=11]
+[ext_resource path="res://resources/Panel2.tres" type="StyleBox" id=12]
+[ext_resource path="res://images/hpbar/3.png" type="Texture" id=13]
+[ext_resource path="res://images/hpbar/head.png" type="Texture" id=14]
+[ext_resource path="res://images/hpbar/4.png" type="Texture" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="CircleShape2D" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = ExtResource( 10 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.964706, 0.870588, 0.686275, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Animation" id=10]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("GameoverPanel:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 125, -132 ), Vector2( 125, 50 ) ]
+}
+
+[node name="UI" type="Control" groups=[
+"UIGroup",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Correct" type="Label" parent="."]
+visible = false
+margin_right = 73.0
+margin_bottom = 22.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Correct:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wrong" type="Label" parent="."]
+visible = false
+margin_left = 87.0
+margin_top = 1.0
+margin_right = 151.0
+margin_bottom = 23.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Wrong:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuButton" type="Button" parent="."]
+margin_left = 355.0
+margin_top = 7.0
+margin_right = 417.0
+margin_bottom = 35.0
+text = "Main Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemsPanel" type="Panel" parent="."]
+margin_left = 141.0
+margin_top = 195.0
+margin_right = 312.0
+margin_bottom = 237.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemsGrid" type="HBoxContainer" parent="ItemsPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 3.0
+margin_right = -17.0
+margin_bottom = -13.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventorySlot" parent="ItemsPanel/ItemsGrid" instance=ExtResource( 2 )]
+
+[node name="InventorySlot2" parent="ItemsPanel/ItemsGrid" instance=ExtResource( 2 )]
+margin_left = 36.0
+margin_right = 68.0
+
+[node name="InventorySlot3" parent="ItemsPanel/ItemsGrid" instance=ExtResource( 2 )]
+margin_left = 72.0
+margin_right = 104.0
+
+[node name="InventorySlot4" parent="ItemsPanel/ItemsGrid" instance=ExtResource( 2 )]
+margin_left = 108.0
+margin_right = 140.0
+
+[node name="QuizPanel" type="Panel" parent="."]
+visible = false
+margin_left = 38.0
+margin_top = 19.0
+margin_right = 380.0
+margin_bottom = 233.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuizTitle" type="Label" parent="QuizPanel"]
+margin_left = 113.0
+margin_top = 11.0
+margin_right = 234.0
+margin_bottom = 38.0
+text = "Example Question:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuizQuestion" type="Label" parent="QuizPanel"]
+margin_left = 49.0
+margin_top = 40.0
+margin_right = 291.0
+margin_bottom = 125.0
+text = "What is 1+1?"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close" type="Button" parent="QuizPanel"]
+margin_left = 11.5
+margin_top = 9.5
+margin_right = 77.5
+margin_bottom = 29.5
+text = "Close"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnswersGrid" type="GridContainer" parent="QuizPanel"]
+margin_left = 29.0
+margin_top = 110.0
+margin_right = 314.0
+margin_bottom = 184.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HPPanel" type="Panel" parent="."]
+margin_left = 18.0
+margin_top = 6.0
+margin_right = 151.0
+margin_bottom = 29.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="head" type="Sprite" parent="HPPanel"]
+position = Vector2( 3, 10 )
+texture = ExtResource( 14 )
+
+[node name="4" type="Sprite" parent="HPPanel"]
+position = Vector2( 87, 10 )
+scale = Vector2( 1, 0.921875 )
+texture = ExtResource( 15 )
+
+[node name="HPBar" type="TextureProgress" parent="HPPanel"]
+margin_left = 3.0
+margin_top = -6.0
+margin_right = 100.0
+margin_bottom = 26.0
+step = 0.05
+value = 20.0
+texture_under = ExtResource( 13 )
+texture_progress = ExtResource( 9 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameoverPanel" type="Panel" parent="."]
+margin_left = 125.0
+margin_top = -132.0
+margin_right = 324.0
+margin_bottom = -4.0
+custom_styles/panel = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Button" parent="GameoverPanel"]
+margin_left = 43.0
+margin_top = 78.0
+margin_right = 153.0
+margin_bottom = 106.0
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GameoverPanel"]
+margin_left = 38.0
+margin_top = 34.0
+margin_right = 161.0
+margin_bottom = 61.0
+custom_colors/font_color = Color( 0.94902, 0.894118, 0.894118, 1 )
+text = "GAMEOVER!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.313726 )
+position = Vector2( 60, 186 )
+scale = Vector2( 1.61111, 1.61111 )
+texture = ExtResource( 4 )
+
+[node name="Joystick" type="TouchScreenButton" parent="Sprite"]
+normal = ExtResource( 3 )
+pressed = ExtResource( 3 )
+shape = SubResource( 2 )
+script = ExtResource( 5 )
+
+[node name="Jump" type="TouchScreenButton" parent="."]
+position = Vector2( 385, 185 )
+normal = ExtResource( 6 )
+action = "ui_up"
+
+[node name="Attack" type="TouchScreenButton" parent="."]
+position = Vector2( 331, 184 )
+normal = ExtResource( 7 )
+action = "ui_attack"
+
+[node name="StoryPanel" type="Panel" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StoryPanel"]
+margin_left = 50.0
+margin_top = 41.0
+margin_right = 358.0
+margin_bottom = 188.0
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 0.964706, 0.964706, 0.964706, 1 )
+bbcode_enabled = true
+bbcode_text = "tesst"
+text = "tesst"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseButton" type="Button" parent="StoryPanel"]
+visible = false
+margin_left = 175.0
+margin_top = 201.0
+margin_right = 235.0
+margin_bottom = 229.0
+text = "Close"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextButton" type="Button" parent="StoryPanel"]
+visible = false
+margin_left = 176.0
+margin_top = 201.0
+margin_right = 234.0
+margin_bottom = 229.0
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TutorialPanel" type="Panel" parent="."]
+visible = false
+margin_left = 61.0
+margin_top = 151.0
+margin_right = 353.0
+margin_bottom = 231.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TutorialText" type="RichTextLabel" parent="TutorialPanel"]
+margin_left = 68.0
+margin_top = 9.0
+margin_right = 279.0
+margin_bottom = 60.0
+custom_styles/focus = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+custom_colors/default_color = Color( 0.101961, 0.101961, 0.101961, 1 )
+bbcode_enabled = true
+bbcode_text = "TAETSFGDFGDFG DFG DFHDF DGDFG"
+text = "TAETSFGDFGDFG DFG DFHDF DGDFG"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TutorialCharTimer" type="Timer" parent="TutorialPanel"]
+wait_time = 0.05
+
+[node name="Panel" type="Panel" parent="TutorialPanel"]
+margin_left = 13.0
+margin_top = 16.0
+margin_right = 53.0
+margin_bottom = 56.0
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="TutorialPanel/Panel"]
+position = Vector2( 14, 21 )
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="TutorialPanel"]
+margin_left = 92.0
+margin_top = 58.0
+margin_right = 196.0
+margin_bottom = 85.0
+custom_colors/font_color = Color( 0.560784, 0.560784, 0.560784, 1 )
+text = "TAP TO INTERACT"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="TutorialPanel"]
+margin_left = 7.0
+margin_top = -3.0
+margin_right = 62.0
+margin_bottom = 24.0
+custom_colors/font_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+text = "Name"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+margin_left = 126.0
+margin_top = 61.0
+margin_right = 326.0
+margin_bottom = 140.0
+dialog_text = "Exit to menu?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NamePromptPanel" type="Panel" parent="."]
+margin_left = 106.0
+margin_top = 45.0
+margin_right = 317.0
+margin_bottom = 164.0
+custom_styles/panel = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameEdit" type="LineEdit" parent="NamePromptPanel"]
+margin_left = 46.0
+margin_top = 39.0
+margin_right = 161.0
+margin_bottom = 66.0
+placeholder_text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NamePromptPanel"]
+margin_left = 48.0
+margin_top = 15.0
+margin_right = 160.0
+margin_bottom = 42.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "What's your name?"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OkButton" type="Button" parent="NamePromptPanel"]
+margin_left = 64.0
+margin_top = 77.0
+margin_right = 142.0
+margin_bottom = 105.0
+text = "Ok"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/gameOverFade = SubResource( 10 )
+
+[node name="DialogCharTimer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
+[connection signal="pressed" from="QuizPanel/Close" to="." method="_on_Close_pressed"]
+[connection signal="pressed" from="GameoverPanel/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="StoryPanel/CloseButton" to="." method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="StoryPanel/NextButton" to="." method="_on_NextButton_pressed"]
+[connection signal="gui_input" from="TutorialPanel" to="." method="_on_TutorialPanel_gui_input"]
+[connection signal="timeout" from="TutorialPanel/TutorialCharTimer" to="." method="_on_TutorialCharTimer_timeout"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]
+[connection signal="pressed" from="NamePromptPanel/OkButton" to="." method="_on_OkButton_pressed"]
+[connection signal="timeout" from="DialogCharTimer" to="." method="_on_DialogCharTimer_timeout"]

@@ -1,0 +1,142 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://images/sprites/10-Run Sword/Run Sword 04.png" type="Texture" id=1]
+[ext_resource path="res://images/sprites/09-Idle Sword/Idle Sword 04.png" type="Texture" id=2]
+[ext_resource path="res://images/sprites/10-Run Sword/Run Sword 05.png" type="Texture" id=3]
+[ext_resource path="res://images/sprites/09-Idle Sword/Idle Sword 05.png" type="Texture" id=4]
+[ext_resource path="res://images/sprites/10-Run Sword/Run Sword 02.png" type="Texture" id=5]
+[ext_resource path="res://images/sprites/10-Run Sword/Run Sword 06.png" type="Texture" id=6]
+[ext_resource path="res://images/sprites/09-Idle Sword/Idle Sword 02.png" type="Texture" id=7]
+[ext_resource path="res://images/sprites/10-Run Sword/Run Sword 03.png" type="Texture" id=8]
+[ext_resource path="res://images/sprites/09-Idle Sword/Idle Sword 01.png" type="Texture" id=9]
+[ext_resource path="res://images/sprites/09-Idle Sword/Idle Sword 03.png" type="Texture" id=10]
+[ext_resource path="res://images/sprites/10-Run Sword/Run Sword 01.png" type="Texture" id=11]
+[ext_resource path="res://scripts/Player.gd" type="Script" id=12]
+[ext_resource path="res://actors/PlayerDetection.tscn" type="PackedScene" id=13]
+[ext_resource path="res://actors/PlayerHitbox.tscn" type="PackedScene" id=14]
+[ext_resource path="res://images/sprites/16-Attack 2/Attack 2 03.png" type="Texture" id=15]
+[ext_resource path="res://images/sprites/16-Attack 2/Attack 2 01.png" type="Texture" id=16]
+[ext_resource path="res://images/sprites/16-Attack 2/Attack 2 02.png" type="Texture" id=17]
+[ext_resource path="res://actors/PlayerHurtbox.tscn" type="PackedScene" id=18]
+[ext_resource path="res://images/backgrounds/Background/Additional Sky.png" type="Texture" id=19]
+[ext_resource path="res://images/backgrounds/Background/Small Cloud 2.png" type="Texture" id=20]
+[ext_resource path="res://images/backgrounds/Background/Small Cloud 1.png" type="Texture" id=21]
+[ext_resource path="res://music/Slash.wav" type="AudioStream" id=22]
+[ext_resource path="res://music/Grunt.wav" type="AudioStream" id=23]
+[ext_resource path="res://images/sprites/14-Hit Sword/Hit Sword 01.png" type="Texture" id=24]
+[ext_resource path="res://images/sprites/14-Hit Sword/Hit Sword 02.png" type="Texture" id=25]
+[ext_resource path="res://images/sprites/14-Hit Sword/Hit Sword 03.png" type="Texture" id=26]
+[ext_resource path="res://images/sprites/14-Hit Sword/Hit Sword 04.png" type="Texture" id=27]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "attack",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "hit",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "run",
+"speed": 8.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="CircleShape2D" id=3]
+
+[node name="Player" type="KinematicBody2D"]
+input_pickable = true
+collision_mask = 6
+script = ExtResource( 12 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.1 )
+motion_mirroring = Vector2( 426, 240 )
+
+[node name="BG Image" type="Sprite" parent="ParallaxBackground/Sky"]
+scale = Vector2( 13.5313, 7.71875 )
+texture = ExtResource( 19 )
+centered = false
+
+[node name="Big Cloud" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 0.4 )
+motion_mirroring = Vector2( 426, 240 )
+
+[node name="Big Clouds" type="Sprite" parent="ParallaxBackground/Big Cloud"]
+position = Vector2( 38, 15 )
+texture = ExtResource( 20 )
+centered = false
+
+[node name="Small Cloud 2" type="Sprite" parent="ParallaxBackground/Big Cloud"]
+position = Vector2( 181, 55 )
+texture = ExtResource( 20 )
+flip_h = true
+
+[node name="Small Cloud" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.7, 0.7 )
+motion_mirroring = Vector2( 426, 240 )
+
+[node name="Small Cloud 1" type="Sprite" parent="ParallaxBackground/Small Cloud"]
+position = Vector2( 266, 108 )
+texture = ExtResource( 21 )
+centered = false
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "idle"
+frame = 2
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 2 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -24 )
+current = true
+smoothing_enabled = true
+smoothing_speed = 3.0
+
+[node name="PlayerDetection" parent="." instance=ExtResource( 13 )]
+
+[node name="PlayerHurtbox" parent="." instance=ExtResource( 18 )]
+
+[node name="BedrockDetect" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BedrockDetect"]
+shape = SubResource( 3 )
+
+[node name="AttackPivot" type="Position2D" parent="."]
+
+[node name="PlayerHitbox" parent="AttackPivot" instance=ExtResource( 14 )]
+visible = false
+position = Vector2( 19, 0 )
+
+[node name="Slash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+bus = "SFX"
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+volume_db = -6.0
+bus = "SFX"
+
+[connection signal="area_entered" from="PlayerDetection" to="." method="_on_PlayerDetection_area_entered"]
+[connection signal="area_entered" from="PlayerHurtbox" to="." method="_on_PlayerHurtbox_area_entered"]
+[connection signal="area_entered" from="BedrockDetect" to="." method="_on_BedrockDetect_area_entered"]
