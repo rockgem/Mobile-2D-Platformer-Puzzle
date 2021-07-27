@@ -8,6 +8,6 @@
 
 [resource]
 script = ExtResource( 1 )
-question = "Dinahamak na matalino si Lemuel kay Miguel _________ si Vladimir."
+question = [ "" ]
 answers = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ) ]
-correctAnswer = ExtResource( 3 )
+correctAnswer = [ null ]

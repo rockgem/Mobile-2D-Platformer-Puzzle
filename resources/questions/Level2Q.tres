@@ -8,6 +8,6 @@
 
 [resource]
 script = ExtResource( 1 )
-question = "_________ mo na ba yung text sa atin ni Ms. Tapas sa telepono?"
+question = [ "question 1", "", "", "", "", "", "" ]
 answers = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ) ]
-correctAnswer = ExtResource( 4 )
+correctAnswer = [ null, null, null, null ]

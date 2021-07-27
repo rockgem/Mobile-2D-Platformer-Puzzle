@@ -8,6 +8,6 @@
 
 [resource]
 script = ExtResource( 1 )
-question = "Kung sino man ang ________ ng impormasyon tungkol sa taong hinahanap sa larawan ay gagantimpalaan ng sampung-libong piso."
+question = [ "Question #1 ans: A", "Question #2 ans: B", "question 3 ans: C", "question 4 ans: A", "question 5 ans: B" ]
 answers = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 4 ) ]
-correctAnswer = ExtResource( 2 )
+correctAnswer = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ) ]

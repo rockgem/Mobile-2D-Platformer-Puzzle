@@ -4,8 +4,8 @@ export(Resource) var levelQuestion
 
 func _ready():
 	GameManager.currentQuestion = levelQuestion
+	GameManager.currentQuestionIndexMax = GameManager.currentQuestion.question.size()
 	get_tree().call_group("UIGroup", "initQuiz")
-	for i in range(0, GameManager.playerItems.size()):
-		GameManager.playerItems[i] = null
+	GameManager.newLevel()
 	
 	get_tree().call_group("UIGroup", "showStoryDialog")

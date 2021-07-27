@@ -28,13 +28,18 @@ func showQuizAnswerHolder():
 func initQuiz():
 	hpUpdated()
 	resetQuiz()
-	$QuizPanel/QuizQuestion.text = GameManager.currentQuestion.question
+	$QuizPanel/QuizQuestion.text = GameManager.currentQuestion.question[GameManager.currentQuestionIndex]
 	for i in range(0, GameManager.currentQuestion.answers.size()):
 		var newHolder = questionHolder.instance()
-		var tempAnsRes = GameManager.currentQuestion.answers[i]
+		#var tempAnsRes = GameManager.currentQuestion.answers[i]
 		newHolder.newQuestion(i)
 		newHolder.hide()
 		$QuizPanel/AnswersGrid.add_child(newHolder)
+
+
+func nextQuestion():
+	$QuizPanel/QuizQuestion.text = GameManager.currentQuestion.question[GameManager.currentQuestionIndex]
+
 
 func resetQuiz():
 	if $QuizPanel/AnswersGrid.get_child_count() > 0:

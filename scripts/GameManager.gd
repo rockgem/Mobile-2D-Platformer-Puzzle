@@ -9,6 +9,8 @@ var isIntroShown = false
 
 var currentQuestion = null
 var currentLevel = 1
+var currentQuestionIndex = 0
+var currentQuestionIndexMax = 0   # maximum number of questions (dynamic size based on how many questions there is)
 
 var playerName = ""
 var playerItems = [null, null, null, null]
@@ -27,14 +29,26 @@ func newGame():
 	isIntroShown = false
 	get_tree().call_group("UIGroup", "hpUpdated")
 
-func playerAnswered(answerRes):
+# go to the next level
+func advanceToLevel():
 	currentLevel += 1
-	if answerRes == currentQuestion.correctAnswer:
-		return true
-#		get_tree().change_scene("res://scenes/Level %s.tscn" % str(currentLevel))
+	currentQuestionIndex = 0
+	get_tree().change_scene("res://scenes/Level %s.tscn" % str(GameManager.currentLevel))
+
+
+func playerAnswered(answerRes):
+	#currentLevel += 1
+	if currentQuestionIndex < currentQuestion.correctAnswer.size():
+		if answerRes == currentQuestion.correctAnswer[currentQuestionIndex]:
+			currentQuestionIndex += 1
+			return true
+			#get_tree().change_scene("res://scenes/Level %s.tscn" % str(currentLevel))
+		else:
+			currentQuestionIndex += 1
+			return false
+			#get_tree().change_scene("res://scenes/Level %s.tscn" % str(currentLevel))
 	else:
 		return false
-#		get_tree().change_scene("res://scenes/Level %s.tscn" % str(currentLevel))
 
 func playerLoot(res):
 	for i in playerItems.size():
