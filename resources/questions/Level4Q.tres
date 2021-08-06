@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://resources/questions/Question.gd" type="Script" id=1]
+[ext_resource path="res://resources/answers/Level 4/Level4A.tres" type="Resource" id=2]
+[ext_resource path="res://resources/answers/Level 4/Level4C.tres" type="Resource" id=3]
+[ext_resource path="res://resources/answers/Level 4/Level4B.tres" type="Resource" id=4]
+[ext_resource path="res://resources/answers/Level 4/Level4D.tres" type="Resource" id=5]
+
+[resource]
+script = ExtResource( 1 )
+question = [ "level 4 question 1", "level 4 question 2", "level 4 question 3" ]
+answers = [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ]
+correctAnswer = [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 4 ) ]

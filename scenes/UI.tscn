@@ -77,6 +77,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Score" type="Label" parent="."]
+margin_left = 1.0
+margin_top = 35.0
+margin_right = 47.0
+margin_bottom = 62.0
+custom_colors/font_color = Color( 0.960784, 0.960784, 0.960784, 1 )
+text = "Score:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Wrong" type="Label" parent="."]
 visible = false
 margin_left = 87.0

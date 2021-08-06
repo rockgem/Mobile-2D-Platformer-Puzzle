@@ -1,0 +1,48 @@
+[gd_resource type="SpriteFrames" load_steps=24 format=2]
+
+[ext_resource path="res://images/sprites/EnemyIdle/Idle 03.png" type="Texture" id=1]
+[ext_resource path="res://images/sprites/EnemyRun/Run 03.png" type="Texture" id=2]
+[ext_resource path="res://images/sprites/EnemyIdle/Idle 06.png" type="Texture" id=3]
+[ext_resource path="res://images/sprites/EnemyRun/Run 02.png" type="Texture" id=4]
+[ext_resource path="res://images/sprites/EnemyIdle/Idle 07.png" type="Texture" id=5]
+[ext_resource path="res://images/sprites/EnemyAttack/Attack 05.png" type="Texture" id=6]
+[ext_resource path="res://images/sprites/EnemyAttack/Attack 04.png" type="Texture" id=7]
+[ext_resource path="res://images/sprites/EnemyIdle/Idle 01.png" type="Texture" id=8]
+[ext_resource path="res://images/sprites/EnemyIdle/Idle 02.png" type="Texture" id=9]
+[ext_resource path="res://images/sprites/EnemyRun/Run 06.png" type="Texture" id=10]
+[ext_resource path="res://images/sprites/08-Hit/Hit 01.png" type="Texture" id=11]
+[ext_resource path="res://images/sprites/08-Hit/Hit 03.png" type="Texture" id=12]
+[ext_resource path="res://images/sprites/EnemyAttack/Attack 03.png" type="Texture" id=13]
+[ext_resource path="res://images/sprites/EnemyRun/Run 04.png" type="Texture" id=14]
+[ext_resource path="res://images/sprites/EnemyRun/Run 01.png" type="Texture" id=15]
+[ext_resource path="res://images/sprites/08-Hit/Hit 04.png" type="Texture" id=16]
+[ext_resource path="res://images/sprites/EnemyAttack/Attack 01.png" type="Texture" id=17]
+[ext_resource path="res://images/sprites/EnemyIdle/Idle 08.png" type="Texture" id=18]
+[ext_resource path="res://images/sprites/EnemyAttack/Attack 02.png" type="Texture" id=19]
+[ext_resource path="res://images/sprites/EnemyIdle/Idle 05.png" type="Texture" id=20]
+[ext_resource path="res://images/sprites/EnemyIdle/Idle 04.png" type="Texture" id=21]
+[ext_resource path="res://images/sprites/EnemyRun/Run 05.png" type="Texture" id=22]
+[ext_resource path="res://images/sprites/08-Hit/Hit 02.png" type="Texture" id=23]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 1 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "idle",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 19 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "attack",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 23 ), ExtResource( 12 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "hit",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 14 ), ExtResource( 22 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "run",
+"speed": 8.0
+} ]

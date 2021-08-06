@@ -53,6 +53,8 @@ config/icon="res://icon.png"
 GameManager="*res://scripts/GameManager.gd"
 Bg="*res://music/BG.tscn"
 HealSfx="*res://music/HealSFX.tscn"
+Firebase="*res://scripts/globals/Firebase.gd"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 

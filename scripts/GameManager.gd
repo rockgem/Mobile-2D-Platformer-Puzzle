@@ -18,6 +18,8 @@ var playerHP = 20
 var playerHPMax = 20
 var playerDamage = 30
 
+var score = 0
+
 func newGame():
 	currentQuestion = null
 	currentLevel = 1
@@ -41,6 +43,7 @@ func playerAnswered(answerRes):
 	if currentQuestionIndex < currentQuestion.correctAnswer.size():
 		if answerRes == currentQuestion.correctAnswer[currentQuestionIndex]:
 			currentQuestionIndex += 1
+			score += 1
 			return true
 			#get_tree().change_scene("res://scenes/Level %s.tscn" % str(currentLevel))
 		else:
@@ -50,6 +53,7 @@ func playerAnswered(answerRes):
 	else:
 		return false
 
+
 func playerLoot(res):
 	for i in playerItems.size():
 		if playerItems[i] == null:
@@ -58,17 +62,21 @@ func playerLoot(res):
 	
 	get_tree().call_group("UIGroup", "updateItemDisplay")
 
+
 func playerHeal(amount):
 	playerHP += amount
 	HealSfx.play()
 	get_tree().call_group("UIGroup", "hpUpdated")
 
+
 func newLevel():
 	for i in range(0, GameManager.playerItems.size()):
 		GameManager.playerItems[i] = null
 
+
 func restartLevel():
 	get_tree().change_scene("res://scenes/Level %s.tscn" % str(currentLevel))
+
 
 func saveGame():
 	var dir = Directory.new()
@@ -95,6 +103,7 @@ func saveGame():
 		savedGame.playerItems = playerItems
 		ResourceSaver.save(SAVE_PATH + "/save1.tres", savedGame)
 
+
 func loadGame():
 	var file = File.new()
 	if file.file_exists(SAVE_PATH + "/save1.tres"):
@@ -106,6 +115,7 @@ func loadGame():
 		isIntroShown = savedGame.isIntroShown
 		playerItems = savedGame.playerItems
 		get_tree().change_scene("res://scenes/Level %s.tscn" % str(currentLevel))
+
 
 func gameOver():
 	get_tree().call_group("UIGroup", "showGameOver")

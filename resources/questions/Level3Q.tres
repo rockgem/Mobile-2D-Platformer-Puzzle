@@ -8,6 +8,6 @@
 
 [resource]
 script = ExtResource( 1 )
-question = [ "" ]
+question = [ "answer is A" ]
 answers = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ) ]
-correctAnswer = [ null ]
+correctAnswer = [ ExtResource( 3 ) ]

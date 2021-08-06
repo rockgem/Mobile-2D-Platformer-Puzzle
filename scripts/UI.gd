@@ -8,6 +8,7 @@ var dialogIndex = 0
 
 func _ready():
 	$HPPanel/HPBar.max_value = GameManager.playerHPMax
+	$Score.text = "Score: " + str(GameManager.score)
 
 func showQuiz():
 	$QuizPanel.show()
@@ -39,7 +40,7 @@ func initQuiz():
 
 func nextQuestion():
 	$QuizPanel/QuizQuestion.text = GameManager.currentQuestion.question[GameManager.currentQuestionIndex]
-
+	$Score.text = "Score: " + str(GameManager.score)
 
 func resetQuiz():
 	if $QuizPanel/AnswersGrid.get_child_count() > 0:
@@ -121,7 +122,8 @@ func showNamePrompt():
 		$NamePromptPanel.show()
 
 func _on_Menu_pressed():
-	get_tree().change_scene("res://scenes/MainMenu.tscn")
+	SilentWolf.Scores.persist_score(GameManager.playerName, GameManager.score)
+	get_tree().change_scene("res://addons/silent_wolf/Scores/Leaderboard.tscn")
 
 
 func _on_DialogCharTimer_timeout():
