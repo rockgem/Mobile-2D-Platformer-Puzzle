@@ -4,6 +4,8 @@ extends Node
 const SAVE_PATH = "user://save"
 var savedGame = null
 
+var running = false
+
 var isTutorialShown = false
 var isIntroShown = false
 
@@ -21,6 +23,7 @@ var playerDamage = 30
 var score = 0
 
 func newGame():
+	running = true
 	currentQuestion = null
 	currentLevel = 1
 	
@@ -58,6 +61,7 @@ func playerLoot(res):
 	for i in playerItems.size():
 		if playerItems[i] == null:
 			playerItems[i] = res
+			Almanac.add(res.answerKey, res.meaning)
 			break
 	
 	get_tree().call_group("UIGroup", "updateItemDisplay")
@@ -114,10 +118,40 @@ func loadGame():
 		isTutorialShown = savedGame.isTutorialShown
 		isIntroShown = savedGame.isIntroShown
 		playerItems = savedGame.playerItems
+		
+		running = true
 		get_tree().change_scene("res://scenes/Level %s.tscn" % str(currentLevel))
 
 
 func gameOver():
+	running = false
 	get_tree().call_group("UIGroup", "showGameOver")
 
 
+func changeBackground(player):
+	if currentLevel == 1:
+		return
+	
+	var skyColor = Color(currentLevel / 0.2, currentLevel / 0.2, currentLevel / 0.2)
+	var bigCloud = Color(currentLevel / 4, currentLevel / 6, currentLevel / 4)
+	var smallCloud = Color(currentLevel / 3, currentLevel / 5, currentLevel / 3)
+	
+	if currentLevel == 2:
+		player.get_node("ParallaxBackground/Sky").modulate = Color(.98, .89, .89)
+		player.get_node("ParallaxBackground/Big Cloud").modulate = Color(.89, .64, .64)
+		player.get_node("ParallaxBackground/Small Cloud").modulate = Color(.90, .68, .68)
+	elif currentLevel == 3:
+		player.get_node("ParallaxBackground/Sky").modulate = Color(.98, .80, .80)
+		player.get_node("ParallaxBackground/Big Cloud").modulate = Color(.89, .60, .60)
+		player.get_node("ParallaxBackground/Small Cloud").modulate = Color(.90, .66, .66)
+	elif currentLevel == 4:
+		player.get_node("ParallaxBackground/Sky").modulate = Color(.98, .74, .74)
+		player.get_node("ParallaxBackground/Big Cloud").modulate = Color(.89, .50, .50)
+		player.get_node("ParallaxBackground/Small Cloud").modulate = Color(.90, .55, .55)
+	elif currentLevel == 5:
+		player.get_node("ParallaxBackground/Sky").modulate = Color(.98, .70, .70)
+		player.get_node("ParallaxBackground/Big Cloud").modulate = Color(.92, .46, .46)
+		player.get_node("ParallaxBackground/Small Cloud").modulate = Color(.94, .50, .50)
+	
+	
+	

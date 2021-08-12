@@ -55,6 +55,7 @@ Bg="*res://music/BG.tscn"
 HealSfx="*res://music/HealSFX.tscn"
 Firebase="*res://scripts/globals/Firebase.gd"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+Almanac="*res://scripts/globals/Almanac.gd"
 
 [display]
 

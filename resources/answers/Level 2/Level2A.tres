@@ -7,3 +7,4 @@
 script = ExtResource( 1 )
 answerKey = "Nareceive"
 texture = ExtResource( 2 )
+meaning = ""

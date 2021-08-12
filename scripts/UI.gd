@@ -163,3 +163,10 @@ func _on_OkButton_pressed():
 		GameManager.playerName = $NamePromptPanel/NameEdit.text
 		$NamePromptPanel.hide()
 		showTutorial()
+
+
+func _on_Almanac_pressed():
+	if !$AlmanacPanel.visible:
+		$AlmanacPanel.show()
+	else:
+		$AlmanacPanel.hide()

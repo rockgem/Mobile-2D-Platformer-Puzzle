@@ -79,7 +79,8 @@ func _on_EnemyHurtbox_area_entered(area):
 
 # if player touches enemy
 func _on_EnemyHitbox_area_entered(area):
-	attack()
+	if GameManager.running:
+		attack()
 
 func _on_EnemyDetection_body_exited(body):
 	playerBody = null

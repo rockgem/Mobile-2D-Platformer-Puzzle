@@ -1,6 +1,6 @@
 extends TouchScreenButton
 
-var radius = Vector2(17, 17)
+var radius = Vector2(8, 8)
 var boundary = 36
 
 var drag = -1
