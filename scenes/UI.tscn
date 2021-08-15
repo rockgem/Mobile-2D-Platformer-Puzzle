@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scripts/UI.gd" type="Script" id=1]
 [ext_resource path="res://actors/InventorySlot.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://images/hpbar/head.png" type="Texture" id=14]
 [ext_resource path="res://images/hpbar/4.png" type="Texture" id=15]
 [ext_resource path="res://scripts/AlmanacPanel.gd" type="Script" id=16]
+[ext_resource path="res://images/book_03g.png" type="Texture" id=17]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -111,12 +112,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Almanac" type="Button" parent="."]
-margin_left = 355.0
-margin_top = 41.0
-margin_right = 417.0
-margin_bottom = 69.0
-text = "Almanac"
+[node name="Almanac" type="TextureButton" parent="."]
+margin_left = 5.0
+margin_top = 59.0
+margin_right = 27.0
+margin_bottom = 81.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 17 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

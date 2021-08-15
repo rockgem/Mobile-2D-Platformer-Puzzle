@@ -97,6 +97,7 @@ func saveGame():
 		savedGame.isTutorialShown = isTutorialShown
 		savedGame.isIntroShown = isIntroShown
 		savedGame.playerItems = playerItems
+		savedGame.almanac = to_json(Almanac.dict)
 		ResourceSaver.save(SAVE_PATH + "/save1.tres", savedGame)
 	else:
 		savedGame = Data.new()
@@ -105,6 +106,7 @@ func saveGame():
 		savedGame.isTutorialShown = isTutorialShown
 		savedGame.isIntroShown = isIntroShown
 		savedGame.playerItems = playerItems
+		savedGame.almanac = Almanac.dict
 		ResourceSaver.save(SAVE_PATH + "/save1.tres", savedGame)
 
 
@@ -118,6 +120,7 @@ func loadGame():
 		isTutorialShown = savedGame.isTutorialShown
 		isIntroShown = savedGame.isIntroShown
 		playerItems = savedGame.playerItems
+		Almanac.dict = parse_json(savedGame.almanac)
 		
 		running = true
 		get_tree().change_scene("res://scenes/Level %s.tscn" % str(currentLevel))
