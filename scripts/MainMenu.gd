@@ -39,3 +39,7 @@ func _on_Settings_pressed():
 
 func _on_Close_pressed():
 	$SettingsPanel.hide()
+
+
+func _on_Leaderboard_pressed():
+	get_tree().change_scene("res://addons/silent_wolf/Scores/Leaderboard.tscn")

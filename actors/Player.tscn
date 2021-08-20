@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://images/sprites/10-Run Sword/Run Sword 04.png" type="Texture" id=1]
 [ext_resource path="res://images/sprites/09-Idle Sword/Idle Sword 04.png" type="Texture" id=2]
@@ -27,6 +27,21 @@
 [ext_resource path="res://images/sprites/14-Hit Sword/Hit Sword 02.png" type="Texture" id=25]
 [ext_resource path="res://images/sprites/14-Hit Sword/Hit Sword 03.png" type="Texture" id=26]
 [ext_resource path="res://images/sprites/14-Hit Sword/Hit Sword 04.png" type="Texture" id=27]
+[ext_resource path="res://music/Powerup.wav" type="AudioStream" id=28]
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = 30.0
+scale = 2.0
+scale_random = 1.0
+color = Color( 0.85098, 0.737255, 0.341176, 1 )
+hue_variation = -0.08
+hue_variation_random = 0.4
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -95,9 +110,20 @@ position = Vector2( 266, 108 )
 texture = ExtResource( 21 )
 centered = false
 
+[node name="Particles2D" type="Particles2D" parent="."]
+emitting = false
+amount = 30
+one_shot = true
+speed_scale = 0.5
+explosiveness = 0.53
+randomness = 1.0
+local_coords = false
+process_material = SubResource( 4 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -108,7 +134,6 @@ shape = SubResource( 2 )
 position = Vector2( 0, -24 )
 current = true
 smoothing_enabled = true
-smoothing_speed = 3.0
 
 [node name="PlayerDetection" parent="." instance=ExtResource( 13 )]
 
@@ -136,6 +161,11 @@ stream = ExtResource( 23 )
 volume_db = -6.0
 bus = "SFX"
 
+[node name="Powerup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 28 )
+bus = "SFX"
+
 [connection signal="area_entered" from="PlayerDetection" to="." method="_on_PlayerDetection_area_entered"]
 [connection signal="area_entered" from="PlayerHurtbox" to="." method="_on_PlayerHurtbox_area_entered"]
+[connection signal="body_entered" from="PlayerHurtbox" to="." method="_on_PlayerHurtbox_body_entered"]
 [connection signal="area_entered" from="BedrockDetect" to="." method="_on_BedrockDetect_area_entered"]

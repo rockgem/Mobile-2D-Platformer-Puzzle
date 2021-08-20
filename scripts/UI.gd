@@ -7,8 +7,15 @@ var tutorialDialogRes = load("res://resources/dialogs/TutorialDialog.tres")
 var dialogIndex = 0
 
 func _ready():
+	PowerupManager.connect("gold_added", self, "goldUpdate")
 	$HPPanel/HPBar.max_value = GameManager.playerHPMax
 	$Score.text = "Score: " + str(GameManager.score)
+	$AnimatedSprite/GoldLabel.text = str(GameManager.playerGold)
+
+
+func goldUpdate():
+	$AnimatedSprite/GoldLabel.text = str(GameManager.playerGold)
+
 
 func showQuiz():
 	$QuizPanel.show()
@@ -161,6 +168,7 @@ func _on_MainMenuButton_pressed():
 func _on_OkButton_pressed():
 	if $NamePromptPanel/NameEdit.text != "":
 		GameManager.playerName = $NamePromptPanel/NameEdit.text
+		GameManager.emit_signal("playername_added")
 		$NamePromptPanel.hide()
 		showTutorial()
 
@@ -168,5 +176,6 @@ func _on_OkButton_pressed():
 func _on_Almanac_pressed():
 	if !$AlmanacPanel.visible:
 		$AlmanacPanel.show()
+		$AnimationPlayer.play("almanacPop")
 	else:
 		$AlmanacPanel.hide()

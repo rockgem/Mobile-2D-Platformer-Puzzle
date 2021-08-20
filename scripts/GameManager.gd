@@ -1,6 +1,8 @@
 extends Node
 # SINGLETON ----------------- !!
 
+signal playername_added
+
 const SAVE_PATH = "user://save"
 var savedGame = null
 
@@ -14,6 +16,7 @@ var currentLevel = 1
 var currentQuestionIndex = 0
 var currentQuestionIndexMax = 0   # maximum number of questions (dynamic size based on how many questions there is)
 
+var playerGold = 0
 var playerName = ""
 var playerItems = [null, null, null, null]
 var playerHP = 20
@@ -27,6 +30,7 @@ func newGame():
 	currentQuestion = null
 	currentLevel = 1
 	
+	playerGold = 0
 	playerItems = [null, null, null, null]
 	playerHP = 20
 	playerHPMax = 20
@@ -93,6 +97,7 @@ func saveGame():
 #		var existingData = ResourceLoader.load(SAVE_PATH + "/save1.tres")
 		savedGame = Data.new()
 		savedGame.currentLevel = currentLevel
+		savedGame.gold = playerGold
 		savedGame.hp = playerHP
 		savedGame.isTutorialShown = isTutorialShown
 		savedGame.isIntroShown = isIntroShown
@@ -102,6 +107,7 @@ func saveGame():
 	else:
 		savedGame = Data.new()
 		savedGame.currentLevel = currentLevel
+		savedGame.gold = playerGold
 		savedGame.hp = playerHP
 		savedGame.isTutorialShown = isTutorialShown
 		savedGame.isIntroShown = isIntroShown
@@ -116,6 +122,7 @@ func loadGame():
 		var existingData = ResourceLoader.load(SAVE_PATH + "/save1.tres")
 		savedGame = existingData
 		currentLevel = savedGame.currentLevel
+		playerGold = savedGame.gold
 		playerHP = savedGame.hp
 		isTutorialShown = savedGame.isTutorialShown
 		isIntroShown = savedGame.isIntroShown
@@ -155,6 +162,6 @@ func changeBackground(player):
 		player.get_node("ParallaxBackground/Sky").modulate = Color(.98, .70, .70)
 		player.get_node("ParallaxBackground/Big Cloud").modulate = Color(.92, .46, .46)
 		player.get_node("ParallaxBackground/Small Cloud").modulate = Color(.94, .50, .50)
-	
-	
-	
+
+
+

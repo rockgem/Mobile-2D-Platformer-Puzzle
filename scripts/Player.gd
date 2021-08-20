@@ -3,11 +3,6 @@ extends KinematicBody2D
 onready var joystick = get_parent().get_node("CanvasLayer/UI//Sprite/Joystick")
 var projectile = preload("res://actors/SwordProjectile.tscn")
 
-var velocity = Vector2.ZERO
-var moveSpeed = 100
-var gravity = 600
-var jumpForce = 300
-
 var jumping = false
 var attacking = false
 var beingHit = false
@@ -24,34 +19,36 @@ func _process(delta):
 
 func _physics_process(delta):
 	
-	if velocity.y != 0:
+	if GlobalPlayer.velocity.y != 0:
 		jumping = true
 	else:
 		jumping = false
 	
-	velocity.y += gravity * delta
+	GlobalPlayer.velocity.y += GlobalPlayer.gravity * delta
 	
 	# movement for pc version
 	# to be able to move the player with keyboard, i-comment out mo lang po
 	# ung nasa ibaba na one-line code for mobile version tas ung
 	# nasa pinaka ibaba na one line code rin paki erase nung comment
 	if Input.is_action_just_pressed("ui_up") && !jumping:
-		velocity.y = -jumpForce
+		GlobalPlayer.velocity.y = -GlobalPlayer.jumpForce
+		if GlobalPlayer.superJumpActive:
+			$Particles2D.emitting = true
 	elif Input.is_action_pressed("ui_right"):
-		velocity.x = moveSpeed
+		GlobalPlayer.velocity.x = GlobalPlayer.moveSpeed
 	elif Input.is_action_pressed("ui_left"):
-		velocity.x = -moveSpeed
+		GlobalPlayer.velocity.x = -GlobalPlayer.moveSpeed
 	else:
-		velocity.x = 0
+		GlobalPlayer.velocity.x = 0
 	
 	# movement for mobile version
-	velocity = move_and_slide(Vector2(joystick.getValue().x * moveSpeed, velocity.y))
+	GlobalPlayer.velocity = move_and_slide(Vector2(joystick.getValue().x * GlobalPlayer.moveSpeed, GlobalPlayer.velocity.y))
 	
-	if velocity.x > 0 && !attacking && !beingHit:
+	if GlobalPlayer.velocity.x > 0 && !attacking && !beingHit:
 		$AttackPivot.rotation = 0
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("run")
-	elif velocity.x < 0 && !attacking && !beingHit:
+	elif GlobalPlayer.velocity.x < 0 && !attacking && !beingHit:
 		$AttackPivot.rotation =  deg2rad(180)
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("run")
@@ -89,6 +86,7 @@ func hit(enemy):
 func _on_PlayerDetection_area_entered(area):
 	pass
 
+
 func _on_PlayerHurtbox_area_entered(area):
 	var enemy = area.owner
 	hit(enemy)
@@ -96,3 +94,18 @@ func _on_PlayerHurtbox_area_entered(area):
 
 func _on_BedrockDetect_area_entered(area):
 	GameManager.restartLevel()
+
+
+func _on_PlayerHurtbox_body_entered(body):
+	if body is RigidBody2D:
+		$Powerup.play()
+		PowerupManager.powerupLoot(body.type)
+		body.get_node("AnimatedSprite").hide()
+		
+		match(body.type):
+			0: body.get_node("Effects").play("goldCoinEffect")
+			1: body.get_node("Effects").play("skullEffect")
+			3: body.get_node("Effects").play("potionEffect")
+		
+		yield(body.get_node("Effects"), "animation_finished")
+		body.queue_free()

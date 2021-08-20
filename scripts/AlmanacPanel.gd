@@ -2,6 +2,14 @@ extends Panel
 
 func _ready():
 	Almanac.connect("word_added", self, "refresh")
+	GameManager.connect("playername_added", self, "nameUpdate")
+	$AlamanacLabel.text = GameManager.playerName + "'s " + "Almanac"
+	rect_pivot_offset.x = rect_size.x / 2
+	rect_pivot_offset.y = rect_size.y / 2
+
+
+func nameUpdate():
+	$AlamanacLabel.text = GameManager.playerName + "'s " + "Almanac"
 
 
 func almanac_init():

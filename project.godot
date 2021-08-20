@@ -56,6 +56,8 @@ HealSfx="*res://music/HealSFX.tscn"
 Firebase="*res://scripts/globals/Firebase.gd"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 Almanac="*res://scripts/globals/Almanac.gd"
+PowerupManager="*res://scripts/globals/PowerupManager.gd"
+GlobalPlayer="*res://scripts/globals/GlobalPlayer.gd"
 
 [display]
 
@@ -151,6 +153,7 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_11="Loot"
 2d_physics/layer_12="Projectile"
 2d_physics/layer_13="Bedrock"
+2d_physics/layer_14="Upgrade"
 
 [physics]
 
