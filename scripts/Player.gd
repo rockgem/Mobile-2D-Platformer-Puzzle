@@ -4,6 +4,7 @@ onready var joystick = get_parent().get_node("CanvasLayer/UI//Sprite/Joystick")
 var projectile = preload("res://actors/SwordProjectile.tscn")
 
 var jumping = false
+var walking = false
 var attacking = false
 var beingHit = false
 
@@ -18,6 +19,9 @@ func _process(delta):
 		attack()
 
 func _physics_process(delta):
+	
+	if walking && !$Footstep.playing && !jumping:
+		$Footstep.play()
 	
 	if GlobalPlayer.velocity.y != 0:
 		jumping = true
@@ -48,12 +52,15 @@ func _physics_process(delta):
 		$AttackPivot.rotation = 0
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("run")
+		walking = true
 	elif GlobalPlayer.velocity.x < 0 && !attacking && !beingHit:
 		$AttackPivot.rotation =  deg2rad(180)
 		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("run")
+		walking = true
 	elif !attacking && !beingHit:
 		$AnimatedSprite.play("idle")
+		walking = false
 	
 	# player movement handler with keyboard
 #	velocity = move_and_slide(velocity)

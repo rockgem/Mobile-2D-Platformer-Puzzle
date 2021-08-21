@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var velocity = Vector2.ZERO
 var moveSpeed = 50
-var gravity = 300
+var gravity = 1200
 
 export(bool) var canHeal = false
 export(Resource) var answerKey = null
@@ -15,7 +15,7 @@ var attacking = false
 
 func _physics_process(delta):
 	
-	velocity.y += gravity * delta
+	velocity.y = gravity * delta
 	
 	if playerBody != null:
 		var velBetween = (playerBody.global_position - global_position).normalized()

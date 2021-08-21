@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://resources/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/UI.tscn" type="PackedScene" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://actors/Boss.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/Level 1.gd" type="Script" id=5]
 [ext_resource path="res://resources/questions/Level4Q.tres" type="Resource" id=6]
+[ext_resource path="res://images/backgrounds/Back Palm Trees/Back Palm Tree Regular 04.png" type="Texture" id=7]
+[ext_resource path="res://images/backgrounds/Back Palm Trees/Back Palm Tree Right 01.png" type="Texture" id=8]
+[ext_resource path="res://actors/Bedrock.tscn" type="PackedScene" id=9]
 
 [node name="Level 5" type="Node2D"]
 script = ExtResource( 5 )
@@ -14,6 +17,28 @@ levelQuestion = ExtResource( 6 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource( 2 )]
+
+[node name="Trees" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Trees"]
+position = Vector2( 140.4, -737.155 )
+texture = ExtResource( 7 )
+
+[node name="Sprite2" type="Sprite" parent="Trees"]
+position = Vector2( 11.7064, -702.507 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3" type="Sprite" parent="Trees"]
+position = Vector2( 39.9906, -691.193 )
+texture = ExtResource( 7 )
+
+[node name="Sprite4" type="Sprite" parent="Trees"]
+position = Vector2( -49.1048, -665.737 )
+texture = ExtResource( 7 )
+
+[node name="Sprite5" type="Sprite" parent="Trees"]
+position = Vector2( 274.895, -778.382 )
+texture = ExtResource( 8 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -28,3 +53,11 @@ position = Vector2( 246.338, -776.843 )
 
 [node name="Boss" parent="." instance=ExtResource( 4 )]
 position = Vector2( 715.782, 250.092 )
+
+[node name="Bedrock" parent="." instance=ExtResource( 9 )]
+position = Vector2( -939.121, 341.905 )
+rotation = 1.5708
+
+[node name="Bedrock2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1324.88, 341.905 )
+rotation = 1.5708

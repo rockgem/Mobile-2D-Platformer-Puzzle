@@ -57,6 +57,8 @@ func resetQuiz():
 			$QuizPanel/AnswersGrid.remove_child(prevHolder)
 
 func _on_Close_pressed():
+	$Click.play()
+	
 	$QuizPanel.hide()
 	$ItemsPanel.show()
 	$Sprite.show()
@@ -129,6 +131,8 @@ func showNamePrompt():
 		$NamePromptPanel.show()
 
 func _on_Menu_pressed():
+	$Click.play()
+	yield($Click, "finished")
 	SilentWolf.Scores.persist_score(GameManager.playerName, GameManager.score)
 	get_tree().change_scene("res://addons/silent_wolf/Scores/Leaderboard.tscn")
 
@@ -149,6 +153,7 @@ func _on_TutorialCharTimer_timeout():
 func _on_TutorialPanel_gui_input(event):
 	if event is InputEventScreenTouch:
 		if event.pressed:
+			$Click.play()
 			showTutorial()
 
 
@@ -162,20 +167,25 @@ func _on_ConfirmationDialog_confirmed():
 
 
 func _on_MainMenuButton_pressed():
+	$Click.play()
 	$ConfirmationDialog.popup()
 
 
 func _on_OkButton_pressed():
 	if $NamePromptPanel/NameEdit.text != "":
+		$Click.play()
 		GameManager.playerName = $NamePromptPanel/NameEdit.text
 		GameManager.emit_signal("playername_added")
 		$NamePromptPanel.hide()
 		showTutorial()
+	else:
+		$Error.play()
 
 
 func _on_Almanac_pressed():
 	if !$AlmanacPanel.visible:
 		$AlmanacPanel.show()
+		$Click.play()
 		$AnimationPlayer.play("almanacPop")
 	else:
 		$AlmanacPanel.hide()

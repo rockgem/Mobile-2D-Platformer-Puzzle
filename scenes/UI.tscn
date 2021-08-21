@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://scripts/UI.gd" type="Script" id=1]
 [ext_resource path="res://actors/InventorySlot.tscn" type="PackedScene" id=2]
@@ -21,6 +21,9 @@
 [ext_resource path="res://images/sprites/upgrades/Gold Coin/03.png" type="Texture" id=19]
 [ext_resource path="res://images/sprites/upgrades/Gold Coin/04.png" type="Texture" id=20]
 [ext_resource path="res://images/sprites/upgrades/Gold Coin/01.png" type="Texture" id=21]
+[ext_resource path="res://music/Sword10.wav" type="AudioStream" id=22]
+[ext_resource path="res://music/Click4.wav" type="AudioStream" id=23]
+[ext_resource path="res://music/Menu_Sound_Error.wav" type="AudioStream" id=24]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -56,7 +59,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=11]
 resource_name = "almanacPop"
 length = 0.2
 step = 0.03
@@ -73,7 +76,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0.1, 0.1 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("GameoverPanel:rect_position")
@@ -101,7 +104,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 150, 184 )
 frames = SubResource( 1 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="GoldLabel" type="Label" parent="AnimatedSprite"]
@@ -513,8 +516,8 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/almanacPop = SubResource( 12 )
-anims/gameOverFade = SubResource( 11 )
+anims/almanacPop = SubResource( 11 )
+anims/gameOverFade = SubResource( 12 )
 
 [node name="DialogCharTimer" type="Timer" parent="."]
 wait_time = 0.05
@@ -566,6 +569,17 @@ text = "Close"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+bus = "SFX"
+
+[node name="Click2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+
+[node name="Error" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+bus = "SFX"
 
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
 [connection signal="pressed" from="Almanac" to="." method="_on_Almanac_pressed"]
