@@ -28,7 +28,7 @@
 [ext_resource path="res://images/sprites/14-Hit Sword/Hit Sword 03.png" type="Texture" id=26]
 [ext_resource path="res://images/sprites/14-Hit Sword/Hit Sword 04.png" type="Texture" id=27]
 [ext_resource path="res://music/Powerup.wav" type="AudioStream" id=28]
-[ext_resource path="res://music/FootStepGeneric2.wav" type="AudioStream" id=29]
+[ext_resource path="res://music/RockFootStep1.wav" type="AudioStream" id=29]
 
 [sub_resource type="ParticlesMaterial" id=1]
 emission_shape = 1
@@ -51,14 +51,14 @@ animations = [ {
 "name": "idle",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
-"loop": true,
-"name": "hit",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "attack",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "hit",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 6 ) ],
@@ -167,6 +167,7 @@ bus = "SFX"
 
 [node name="Footstep" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 29 )
+volume_db = -14.0
 bus = "SFX"
 
 [connection signal="area_entered" from="PlayerDetection" to="." method="_on_PlayerDetection_area_entered"]
