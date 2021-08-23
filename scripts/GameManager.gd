@@ -25,6 +25,8 @@ var playerDamage = 30
 
 var score = 0
 
+var isShopNear = false
+
 func newGame():
 	running = true
 	currentQuestion = null

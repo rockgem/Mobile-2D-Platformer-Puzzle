@@ -10,13 +10,14 @@ var beingHit = false
 
 var dirRight = true
 
+var npcBodyRef = null
+
 func _ready():
 	pass
 
 func _process(delta):
+	pass
 	
-	if Input.is_action_just_pressed("ui_attack"):
-		attack()
 
 func _physics_process(delta):
 	
@@ -64,6 +65,17 @@ func _physics_process(delta):
 	
 	# player movement handler with keyboard
 #	velocity = move_and_slide(velocity)
+
+
+func _input(event):
+	if GameManager.isShopNear && Input.is_action_just_pressed("ui_attack"):
+#		get_tree().call_group("NPCGroup", "showShopUI")
+		npcBodyRef.showShopUI()
+		return
+	
+	if Input.is_action_just_pressed("ui_attack"):
+		attack()
+
 
 func attack():
 	if !attacking:
@@ -116,3 +128,29 @@ func _on_PlayerHurtbox_body_entered(body):
 		
 		yield(body.get_node("Effects"), "animation_finished")
 		body.queue_free()
+
+
+func _on_PlayerDetection_body_entered(body):
+	if body is NPC:
+		# if npc is normal npc
+		if body.npc_type == 0:
+			pass
+		# if npc is shop npc
+		elif body.npc_type == 1:
+			GameManager.isShopNear = true
+			npcBodyRef = body
+			body.showPopup()
+
+
+func _on_PlayerDetection_body_exited(body):
+	if body is NPC:
+		# if npc is normal npc
+		if body.npc_type == 0:
+			pass
+		# if npc is shop npc
+		elif body.npc_type == 1:
+			GameManager.isShopNear = false
+			body.hidePopup()
+			body.hideShopUI()
+			npcBodyRef = null
+#			get_tree().call_group("NPCGroup", "hideShopUI")

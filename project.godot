@@ -29,6 +29,21 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://resources/dropped items/Dropped Items.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://scripts/Enemy.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "ItemDrop",
+"language": "GDScript",
+"path": "res://scripts/ItemDrop.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "NPC",
+"language": "GDScript",
+"path": "res://scripts/NPC.gd"
+}, {
 "base": "Resource",
 "class": "Question",
 "language": "GDScript",
@@ -39,6 +54,9 @@ _global_script_class_icons={
 "Data": "",
 "Dialog": "",
 "DroppedItems": "",
+"Enemy": "",
+"ItemDrop": "",
+"NPC": "",
 "Question": ""
 }
 
@@ -154,6 +172,7 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_12="Projectile"
 2d_physics/layer_13="Bedrock"
 2d_physics/layer_14="Upgrade"
+2d_physics/layer_15="NPC"
 
 [physics]
 

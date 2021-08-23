@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name ItemDrop
 
 var velocity = Vector2.ZERO
 var gravity = 100

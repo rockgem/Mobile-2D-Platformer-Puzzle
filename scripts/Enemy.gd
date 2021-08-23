@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Enemy
 
 var velocity = Vector2.ZERO
 var moveSpeed = 50
