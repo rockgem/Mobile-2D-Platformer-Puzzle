@@ -20,5 +20,6 @@ func initialize(itemRes :Resource):
 
 
 func _on_ShopItem_gui_input(event):
-	if event is InputEventScreenTouch:
+	if event is InputEventScreenTouch && event.is_pressed():
+		$Click.play()
 		ShopManager.selected(res)

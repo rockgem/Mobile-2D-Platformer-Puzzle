@@ -31,26 +31,27 @@ func hidePopup():
 
 # gets called from player detect
 func showShopUI():
+	$CanvasLayer/ShopUI/Panel/AnimatedSprite.play()
+	$CanvasLayer/ShopUI/Panel/AnimatedSprite/GoldLabel.text = str(GameManager.playerGold)
 	$CanvasLayer/ShopUI.show()
 
 
 func hideShopUI():
+	$CanvasLayer/ShopUI/Panel/AnimatedSprite.stop()
 	$CanvasLayer/ShopUI.hide()
 	ShopManager.currentItemSelected = null
 
 
 func showBuy():
-	$CanvasLayer/ShopUI/Panel/AnimatedSprite.play()
-	$CanvasLayer/ShopUI/Panel/AnimatedSprite/GoldLabel.text = GameManager.playerGold
 	$CanvasLayer/ShopUI/Panel/Buy.show()
 
 
 func hideBuy():
-	$CanvasLayer/ShopUI/Panel/AnimatedSprite.stop()
 	$CanvasLayer/ShopUI/Panel/Buy.hide()
 
 
 func _on_Close_pressed():
+	$Click.play()
 	hideShopUI()
 
 
@@ -58,7 +59,9 @@ func _on_Buy_pressed():
 	var err = ShopManager.buy()
 	
 	if err == true:
+		$Click.play()
 		print("buy success")
 		hideShopUI()
 	else:
+		$Error.play()
 		print("buy failed")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://resources/Panel2.tres" type="StyleBox" id=1]
 [ext_resource path="res://scripts/ShopItem.gd" type="Script" id=2]
+[ext_resource path="res://music/Click4.wav" type="AudioStream" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -48,5 +49,9 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 15.874, 15.2787 )
 frames = SubResource( 2 )
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "SFX"
 
 [connection signal="gui_input" from="." to="." method="_on_ShopItem_gui_input"]
