@@ -45,9 +45,15 @@ func initQuiz():
 		$QuizPanel/AnswersGrid.add_child(newHolder)
 
 
+func updateScoreDisplay():
+	$Score.text = "Score: " + str(GameManager.score)
+	$AnimatedSprite/GoldLabel.text = str(GameManager.playerGold)
+
+
 func nextQuestion():
 	$QuizPanel/QuizQuestion.text = GameManager.currentQuestion.question[GameManager.currentQuestionIndex]
 	$Score.text = "Score: " + str(GameManager.score)
+
 
 func resetQuiz():
 	if $QuizPanel/AnswersGrid.get_child_count() > 0:

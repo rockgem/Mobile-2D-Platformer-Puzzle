@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://resources/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://actors/Player.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://resources/answers/Level1/Level1D.tres" type="Resource" id=11]
 [ext_resource path="res://actors/Upgrade.tscn" type="PackedScene" id=12]
 [ext_resource path="res://actors/NPC.tscn" type="PackedScene" id=13]
+[ext_resource path="res://resources/items data/Shop1.tres" type="Resource" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 236 )
@@ -49,6 +50,7 @@ type = 0
 [node name="NPC" parent="." instance=ExtResource( 13 )]
 position = Vector2( -388.75, 177.997 )
 npc_type = 1
+shopData = ExtResource( 14 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 104, 171 )

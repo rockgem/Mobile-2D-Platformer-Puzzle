@@ -23,7 +23,7 @@ var playerHP = 20
 var playerHPMax = 20
 var playerDamage = 30
 
-var score = 0
+var score = 0 setget setScore
 
 var isShopNear = false
 
@@ -86,6 +86,11 @@ func newLevel():
 
 func restartLevel():
 	get_tree().change_scene("res://scenes/Level %s.tscn" % str(currentLevel))
+
+
+func setScore(amount):
+	score = amount
+	get_tree().call_group("UIGroup", "updateScoreDisplay")
 
 
 func saveGame():

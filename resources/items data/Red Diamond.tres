@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=7 format=2]
+
+[ext_resource path="res://resources/items data/Item.gd" type="Script" id=1]
+[ext_resource path="res://images/sprites/upgrades/Red Diamond/04.png" type="Texture" id=2]
+[ext_resource path="res://images/sprites/upgrades/Red Diamond/02.png" type="Texture" id=3]
+[ext_resource path="res://images/sprites/upgrades/Red Diamond/01.png" type="Texture" id=4]
+[ext_resource path="res://images/sprites/upgrades/Red Diamond/03.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[resource]
+script = ExtResource( 1 )
+price = 20
+itemID = "red_diamond"
+itemName = "Red Diamond"
+desc = "+10 score"
+spriteFrames = SubResource( 1 )
+scoreAdd = 10
