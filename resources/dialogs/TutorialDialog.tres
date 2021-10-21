@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource( 1 )
-text = [ "Hi!", "press A & D to move. Press W to jump.", "To slash those enemies, use the 'A' button." ]
+text = [ "Magandang Araw Pirata.", "Ang 'Joystick' ay ginagamit upang gumalaw pa kaliwa't kanan. Pindutin naman ang 'Jump' para tumalon.", "Upang mapaslang ang mga kalaban, gamitin ang pindutang 'A'" ]

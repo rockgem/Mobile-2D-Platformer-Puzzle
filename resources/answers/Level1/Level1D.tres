@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource( 1 )
-answerKey = "nagbigay"
+answerKey = "Habang"
 texture = ExtResource( 2 )
-meaning = "wews no.4"
+meaning = "Ang at ay pinapaikling 't kapag kasunod ng isang patinig."

@@ -64,7 +64,7 @@ func _physics_process(delta):
 		walking = false
 	
 	# player movement handler with keyboard
-#	velocity = move_and_slide(velocity)
+	#GlobalPlayer.velocity = move_and_slide(GlobalPlayer.velocity)
 
 
 func _input(event):

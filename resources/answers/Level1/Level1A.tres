@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource( 1 )
-answerKey = "makapagbibigay"
+answerKey = "Habang"
 texture = ExtResource( 2 )
-meaning = "ito ay si atong"
+meaning = "Ipinakikilala ng kung ang di-katiyakan ng isang kalagayan."

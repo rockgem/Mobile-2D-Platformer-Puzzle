@@ -78,10 +78,12 @@ answerKey = ExtResource( 9 )
 position = Vector2( -779, 31 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2( 2.82837, -83.4386 )
 shape = SubResource( 1 )
 
 [node name="Wall2" type="StaticBody2D" parent="."]
 position = Vector2( 744, -111 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2( 1.41418, 42.4264 )
 shape = SubResource( 1 )
