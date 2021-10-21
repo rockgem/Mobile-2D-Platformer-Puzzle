@@ -12,8 +12,8 @@ func _ready():
 	
 	if GameManager.currentLevel == 1:
 		GameManager.score = 0
-		get_tree().call_group("UIGroup", "showStoryDialog")
 	
+	get_tree().call_group("UIGroup", "showStoryDialog")
 	GameManager.changeBackground(player)
 	
 	Almanac.emit_signal("word_added")

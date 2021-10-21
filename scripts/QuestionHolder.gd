@@ -14,6 +14,7 @@ func _on_QuestionHolder_gui_input(event):
 		if event.pressed && !pressed:
 			var isCorrect = GameManager.playerAnswered(answerRes)
 			if isCorrect:
+				$Nice.play()
 				pressed = true
 				$AnimationPlayer.play("correctAnswerAnimate")
 				yield($AnimationPlayer,"animation_finished")
@@ -21,6 +22,7 @@ func _on_QuestionHolder_gui_input(event):
 #				get_tree().change_scene("res://scenes/Level %s.tscn" % str(GameManager.currentLevel))
 				
 			else:
+				$Error.play()
 				pressed = true
 				$AnimationPlayer.play("wrongAnswerAnimate")
 				yield($AnimationPlayer,"animation_finished")

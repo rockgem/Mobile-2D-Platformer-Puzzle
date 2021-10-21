@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Menu_Sound_Unpause.wav-31cc2b9e2aadedda639d5bdd6f65b6b6.sample"
+
+[deps]
+
+source_file="res://music/Menu_Sound_Unpause.wav"
+dest_files=[ "res://.import/Menu_Sound_Unpause.wav-31cc2b9e2aadedda639d5bdd6f65b6b6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

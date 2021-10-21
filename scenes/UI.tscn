@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://scripts/UI.gd" type="Script" id=1]
 [ext_resource path="res://actors/InventorySlot.tscn" type="PackedScene" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://music/Sword10.wav" type="AudioStream" id=22]
 [ext_resource path="res://music/Click4.wav" type="AudioStream" id=23]
 [ext_resource path="res://music/Menu_Sound_Error.wav" type="AudioStream" id=24]
+[ext_resource path="res://music/Menu_Sound_Load_Savefile.wav" type="AudioStream" id=25]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -104,7 +105,6 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 150, 184 )
 frames = SubResource( 1 )
-frame = 3
 playing = true
 
 [node name="GoldLabel" type="Label" parent="AnimatedSprite"]
@@ -579,6 +579,10 @@ stream = ExtResource( 22 )
 
 [node name="Error" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
+bus = "SFX"
+
+[node name="Nice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
 bus = "SFX"
 
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]

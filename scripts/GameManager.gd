@@ -37,11 +37,12 @@ func newGame():
 	playerHP = 20
 	playerHPMax = 20
 	isTutorialShown = false
-	isIntroShown = false
+	isIntroShown = true
 	get_tree().call_group("UIGroup", "hpUpdated")
 
 # go to the next level
 func advanceToLevel():
+	isIntroShown = true
 	currentLevel += 1
 	currentQuestionIndex = 0
 	get_tree().change_scene("res://scenes/Level %s.tscn" % str(GameManager.currentLevel))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://resources/Panel2.tres" type="StyleBox" id=1]
 [ext_resource path="res://scripts/QuestionHolder.gd" type="Script" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://images/sprites/key sprites/8.png" type="Texture" id=8]
 [ext_resource path="res://images/sprites/key sprites/1.png" type="Texture" id=9]
 [ext_resource path="res://images/sprites/key sprites/3.png" type="Texture" id=10]
+[ext_resource path="res://music/Menu_Sound_Unpause.wav" type="AudioStream" id=11]
+[ext_resource path="res://music/Menu_Sound_Error.wav" type="AudioStream" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -89,10 +91,19 @@ __meta__ = {
 [node name="AnimatedKey" type="AnimatedSprite" parent="."]
 position = Vector2( 29, 20 )
 frames = SubResource( 1 )
+frame = 6
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/correctAnswerAnimate = SubResource( 2 )
 anims/wrongAnswerAnimate = SubResource( 3 )
+
+[node name="Nice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+bus = "SFX"
+
+[node name="Error" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+bus = "SFX"
 
 [connection signal="gui_input" from="." to="." method="_on_QuestionHolder_gui_input"]

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://resources/dialogs/Dialog.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+text = [ "Level 2 na gumising kana", "alas 12 na ng hating gabi mag kape ka muna,", "Nina bat di moko mahal?" ]

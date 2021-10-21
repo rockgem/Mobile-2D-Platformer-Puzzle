@@ -1,8 +1,11 @@
 extends Control
 
 var questionHolder = preload("res://actors/QuestionHolder.tscn")
-var introDialogRes = load("res://resources/dialogs/IntroDialog.tres")
-var tutorialDialogRes = load("res://resources/dialogs/TutorialDialog.tres")
+var introDialogRes = preload("res://resources/dialogs/IntroDialog.tres")
+var tutorialDialogRes = preload("res://resources/dialogs/TutorialDialog.tres")
+
+var level2Dialog = preload("res://resources/dialogs/Level2Dialog.tres")
+var level3Dialog = preload("res://resources/dialogs/Level3Dialog.tres")
 
 var dialogIndex = 0
 
@@ -96,10 +99,16 @@ func showGameOver():
 	$AnimationPlayer.play("gameOverFade")
 
 func showStoryDialog():
-	if dialogIndex < introDialogRes.text.size() && !GameManager.isIntroShown:
+	var current_story
+	match(GameManager.currentLevel):
+		1: current_story = introDialogRes
+		2: current_story = level2Dialog
+		3: current_story = level3Dialog
+	
+	if dialogIndex < current_story.text.size() && GameManager.isIntroShown:
 		$StoryPanel.show()
 		$StoryPanel/NextButton.show()
-		var text = introDialogRes.text[dialogIndex]
+		var text = current_story.text[dialogIndex]
 		$StoryPanel/RichTextLabel.percent_visible = 0
 		$StoryPanel/RichTextLabel.bbcode_text = text
 		dialogIndex += 1
@@ -107,7 +116,7 @@ func showStoryDialog():
 	else:
 		$StoryPanel/NextButton.hide()
 		$StoryPanel/CloseButton.show()
-		GameManager.isIntroShown = true
+		GameManager.isIntroShown = false
 		dialogIndex = 0
 
 func showTutorial():
