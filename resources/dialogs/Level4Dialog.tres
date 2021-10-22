@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://resources/dialogs/Dialog.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+text = [ "level na to", "ang story dialog na to is 5 pages long", "so..... 3rd page na to", "this is the 4th page", "congrats nasa 5 kana" ]

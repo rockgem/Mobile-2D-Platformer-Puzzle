@@ -13,7 +13,7 @@ func _ready():
 
 func initialize(itemRes :Resource):
 	res = itemRes
-	$Label.text = itemRes.desc
+	$Label.text = itemRes.itemName + "\n" + itemRes.desc + "\n" + "Price: " + str(itemRes.price)
 	$AnimatedSprite.frames = itemRes.spriteFrames
 	
 	$AnimatedSprite.play("default")

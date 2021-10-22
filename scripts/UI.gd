@@ -6,6 +6,7 @@ var tutorialDialogRes = preload("res://resources/dialogs/TutorialDialog.tres")
 
 var level2Dialog = preload("res://resources/dialogs/Level2Dialog.tres")
 var level3Dialog = preload("res://resources/dialogs/Level3Dialog.tres")
+var level4Dialog = preload("res://resources/dialogs/Level4Dialog.tres")
 
 var dialogIndex = 0
 
@@ -104,6 +105,7 @@ func showStoryDialog():
 		1: current_story = introDialogRes
 		2: current_story = level2Dialog
 		3: current_story = level3Dialog
+		4: current_story = level4Dialog
 	
 	if dialogIndex < current_story.text.size() && GameManager.isIntroShown:
 		$StoryPanel.show()
