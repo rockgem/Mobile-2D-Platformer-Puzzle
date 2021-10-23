@@ -4,6 +4,7 @@ var questionHolder = preload("res://actors/QuestionHolder.tscn")
 var introDialogRes = preload("res://resources/dialogs/IntroDialog.tres")
 var tutorialDialogRes = preload("res://resources/dialogs/TutorialDialog.tres")
 
+var level1Dialog = preload("res://resources/dialogs/Level1Dialog.tres")
 var level2Dialog = preload("res://resources/dialogs/Level2Dialog.tres")
 var level3Dialog = preload("res://resources/dialogs/Level3Dialog.tres")
 var level4Dialog = preload("res://resources/dialogs/Level4Dialog.tres")
@@ -99,27 +100,51 @@ func showGameOver():
 	$ItemsPanel.hide()
 	$AnimationPlayer.play("gameOverFade")
 
-func showStoryDialog():
+func showStoryDialog(is_intro: bool = false):
 	var current_story
+	var key : String
 	match(GameManager.currentLevel):
-		1: current_story = introDialogRes
-		2: current_story = level2Dialog
-		3: current_story = level3Dialog
-		4: current_story = level4Dialog
+		1: 
+			current_story = level1Dialog
+			key = "Level1"
+		2: 
+			current_story = level2Dialog
+			key = "Level2"
+		3: 
+			current_story = level3Dialog
+			key = "Level3"
+		4: 
+			current_story = level4Dialog
+			key = "Level4"
 	
-	if dialogIndex < current_story.text.size() && GameManager.isIntroShown:
+	if is_intro:
+		GameManager.isIntroShown = true
+		current_story = introDialogRes
+		key = "Intro"
+	
+	if GameManager.isIntroShown:
+		current_story = introDialogRes
+		key = "Intro"
+	
+	if dialogIndex < current_story.text.size():
 		$StoryPanel.show()
 		$StoryPanel/NextButton.show()
 		var text = current_story.text[dialogIndex]
 		$StoryPanel/RichTextLabel.percent_visible = 0
-		$StoryPanel/RichTextLabel.bbcode_text = text
+		$StoryPanel/RichTextLabel.bbcode_text = "[center]" + text + "[/center]"
+		VoiceOverScene.change_voice(key, dialogIndex)
 		dialogIndex += 1
 		$DialogCharTimer.start()
 	else:
+		if GameManager.isIntroShown:
+			GameManager.isIntroShown = false
 		$StoryPanel/NextButton.hide()
-		$StoryPanel/CloseButton.show()
-		GameManager.isIntroShown = false
+#		$StoryPanel/CloseButton.show()
+		$StoryPanel.hide()
+		VoiceOverScene.force_stop_voice()
+		showNamePrompt()
 		dialogIndex = 0
+		
 
 func showTutorial():
 	if dialogIndex < tutorialDialogRes.text.size() && !GameManager.isTutorialShown:
@@ -141,7 +166,8 @@ func showTutorial():
 		$Attack.show()
 		$TutorialPanel.hide()
 		GameManager.isTutorialShown = true
-		dialogIndex = 0
+		dialogIndex = 0 # clear dialog index first before calling showStory again or it will not show up
+		showStoryDialog(false)
 
 func showNamePrompt():
 	if !GameManager.isTutorialShown:
@@ -160,6 +186,7 @@ func _on_DialogCharTimer_timeout():
 
 func _on_CloseButton_pressed():
 	$StoryPanel.hide()
+	dialogIndex = 0
 	showNamePrompt()
 
 

@@ -55,25 +55,25 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
-"loop": false,
-"name": "goldCoinEffect",
-"speed": 6.0
-}, {
 "frames": [ ExtResource( 24 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 25 ) ],
 "loop": false,
 "name": "skullEffect",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 29 ), ExtResource( 30 ) ],
-"loop": false,
-"name": "potionEffect",
 "speed": 6.0
 }, {
 "frames": [  ],
 "loop": false,
 "name": "none",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 29 ), ExtResource( 30 ) ],
+"loop": false,
+"name": "potionEffect",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": false,
+"name": "goldCoinEffect",
+"speed": 6.0
 } ]
 
 [node name="Upgrade" type="RigidBody2D"]

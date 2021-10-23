@@ -90,6 +90,7 @@ PowerupManager="*res://scripts/globals/PowerupManager.gd"
 GlobalPlayer="*res://scripts/globals/GlobalPlayer.gd"
 ShopManager="*res://scripts/globals/ShopManager.gd"
 IntenseBgm="*res://music/IntenseBGM.tscn"
+VoiceOverScene="*res://music/voiceovers/VoiceOverScene.tscn"
 
 [display]
 

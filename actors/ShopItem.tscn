@@ -7,13 +7,13 @@
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 12
 extra_spacing_top = -4
 extra_spacing_bottom = -4
 font_data = ExtResource( 4 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [  ],
 "loop": true,
@@ -46,7 +46,7 @@ __meta__ = {
 margin_left = 30.0
 margin_right = 128.0
 margin_bottom = 32.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Blue Diamond
 + 4344 points
@@ -58,7 +58,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 15.874, 15.2787 )
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

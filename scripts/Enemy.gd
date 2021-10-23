@@ -15,10 +15,6 @@ var beingHit = false
 var attacking = false
 
 
-func _ready():
-	get_node("/root/BG").stop()
-	get_node("/root/IntenseBgm").play()
-
 
 func _physics_process(delta):
 	

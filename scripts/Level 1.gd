@@ -11,9 +11,10 @@ func _ready():
 	GameManager.newLevel()
 	
 	if GameManager.currentLevel == 1:
+		get_tree().call_group("UIGroup", "showStoryDialog", true)
 		GameManager.score = 0
-	
-	get_tree().call_group("UIGroup", "showStoryDialog")
-	GameManager.changeBackground(player)
-	
-	Almanac.emit_signal("word_added")
+	else:
+		get_tree().call_group("UIGroup", "showStoryDialog")
+		GameManager.changeBackground(player)
+		
+		Almanac.emit_signal("word_added")

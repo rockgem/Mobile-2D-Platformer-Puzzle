@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://resources/dialogs/Dialog.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+text = [ "Si Magallanes at ang kaniyang mga kasama ang sinasabing unang mga  nakarating sa Pilipinas. Nagpatayo si Magallanes ng isang krus sa nasabing mga lupain. ", "Kasama ng humigit-kumulang sa 800 mga Cebuano, nabinyagan si Raja Humabon sa ngalan ng Kristiyanismo.", "Tinulungan ni Magallanes si Raja Humabon na labanan si Datu Lapu-Lapu ng pulo ng Mactan." ]

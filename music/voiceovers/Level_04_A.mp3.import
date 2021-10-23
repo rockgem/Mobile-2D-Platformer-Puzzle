@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Level_04_A.mp3-ef351a5234386306aa19e7401c2433c1.mp3str"
+
+[deps]
+
+source_file="res://music/voiceovers/Level_04_A.mp3"
+dest_files=[ "res://.import/Level_04_A.mp3-ef351a5234386306aa19e7401c2433c1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
