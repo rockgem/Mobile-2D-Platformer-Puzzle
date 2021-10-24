@@ -51,14 +51,14 @@ animations = [ {
 "name": "idle",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "attack",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
 "loop": true,
 "name": "hit",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "attack",
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 6 ) ],
@@ -123,7 +123,7 @@ process_material = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "idle"
-frame = 3
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -151,6 +151,8 @@ shape = SubResource( 4 )
 [node name="PlayerHitbox" parent="AttackPivot" instance=ExtResource( 14 )]
 visible = false
 position = Vector2( 19, 0 )
+
+[node name="Tween" type="Tween" parent="."]
 
 [node name="Slash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 22 )

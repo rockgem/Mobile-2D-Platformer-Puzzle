@@ -54,16 +54,21 @@ animations = [ {
 
 [sub_resource type="CircleShape2D" id=3]
 
+[sub_resource type="StyleBoxEmpty" id=4]
+
 [sub_resource type="StyleBoxEmpty" id=5]
 
-[sub_resource type="StyleBoxEmpty" id=6]
-
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=6]
 size = 24
 font_data = ExtResource( 10 )
 
-[sub_resource type="SpriteFrames" id=14]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
+"frames": [ ExtResource( 21 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "goldCoin",
+"speed": 6.0
+}, {
 "frames": [ ExtResource( 40 ), ExtResource( 39 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 41 ), ExtResource( 31 ), ExtResource( 38 ), ExtResource( 37 ) ],
 "loop": true,
 "name": "goldSkull",
@@ -72,11 +77,6 @@ animations = [ {
 "frames": [ ExtResource( 29 ), ExtResource( 34 ), ExtResource( 27 ), ExtResource( 32 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 28 ) ],
 "loop": true,
 "name": "redPotion",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 21 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
-"loop": true,
-"name": "goldCoin",
 "speed": 6.0
 } ]
 
@@ -136,6 +136,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 150, 184 )
 frames = SubResource( 1 )
+frame = 2
 playing = true
 
 [node name="GoldLabel" type="Label" parent="AnimatedSprite"]
@@ -394,9 +395,9 @@ margin_left = 50.0
 margin_top = 41.0
 margin_right = 358.0
 margin_bottom = 188.0
-custom_styles/focus = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
-custom_fonts/normal_font = SubResource( 13 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 6 )
 custom_colors/default_color = Color( 0.424805, 0.344638, 0.316944, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Noong 1519, nagsimulang maglakbay si Fernando de Magallanes mula sa Espanya upang isagawa ang unang paglalayag sa paligid ng mundo."
@@ -429,16 +430,16 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="StoryPanel"]
 position = Vector2( 118, 22 )
-frames = SubResource( 14 )
+frames = SubResource( 7 )
 animation = "goldSkull"
-frame = 5
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="StoryPanel"]
 position = Vector2( 296, 22 )
-frames = SubResource( 14 )
+frames = SubResource( 7 )
 animation = "goldSkull"
-frame = 5
+frame = 3
 playing = true
 
 [node name="TutorialPanel" type="Panel" parent="."]
@@ -521,7 +522,7 @@ __meta__ = {
 [node name="NamePromptPanel" type="Panel" parent="."]
 visible = false
 margin_left = 106.0
-margin_top = 45.0
+margin_top = 28.0
 margin_right = 317.0
 margin_bottom = 164.0
 custom_styles/panel = ExtResource( 12 )
@@ -530,10 +531,11 @@ __meta__ = {
 }
 
 [node name="NameEdit" type="LineEdit" parent="NamePromptPanel"]
-margin_left = 46.0
+margin_left = 23.0
 margin_top = 39.0
-margin_right = 161.0
-margin_bottom = 66.0
+margin_right = 189.0
+margin_bottom = 93.0
+custom_styles/normal = ExtResource( 12 )
 placeholder_text = "Name"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -553,9 +555,9 @@ __meta__ = {
 
 [node name="OkButton" type="Button" parent="NamePromptPanel"]
 margin_left = 64.0
-margin_top = 77.0
+margin_top = 97.0
 margin_right = 142.0
-margin_bottom = 105.0
+margin_bottom = 125.0
 text = "Ok"
 __meta__ = {
 "_edit_use_anchors_": false

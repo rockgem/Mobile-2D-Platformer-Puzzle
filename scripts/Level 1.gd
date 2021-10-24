@@ -14,6 +14,7 @@ func _ready():
 		get_tree().call_group("UIGroup", "showStoryDialog", true)
 		GameManager.score = 0
 	else:
+		GameManager.isIntroShown = false
 		get_tree().call_group("UIGroup", "showStoryDialog")
 		GameManager.changeBackground(player)
 		

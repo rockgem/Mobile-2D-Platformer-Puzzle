@@ -103,17 +103,22 @@ func showGameOver():
 func showStoryDialog(is_intro: bool = false):
 	var current_story
 	var key : String
+	# may story offset since every level dialog only appears at the end of the level
+	# di ko na ma fix structure neto eh spaghetti na yung code sa dami ng revisions HAHAHAHAHAHAH
 	match(GameManager.currentLevel):
 		1: 
 			current_story = level1Dialog
 			key = "Level1"
 		2: 
+			current_story = level1Dialog
+			key = "Level1"
+		3: 
 			current_story = level2Dialog
 			key = "Level2"
-		3: 
+		4: 
 			current_story = level3Dialog
 			key = "Level3"
-		4: 
+		5: 
 			current_story = level4Dialog
 			key = "Level4"
 	
@@ -136,8 +141,6 @@ func showStoryDialog(is_intro: bool = false):
 		dialogIndex += 1
 		$DialogCharTimer.start()
 	else:
-		if GameManager.isIntroShown:
-			GameManager.isIntroShown = false
 		$StoryPanel/NextButton.hide()
 #		$StoryPanel/CloseButton.show()
 		$StoryPanel.hide()
@@ -167,7 +170,7 @@ func showTutorial():
 		$TutorialPanel.hide()
 		GameManager.isTutorialShown = true
 		dialogIndex = 0 # clear dialog index first before calling showStory again or it will not show up
-		showStoryDialog(false)
+#		showStoryDialog(false)
 
 func showNamePrompt():
 	if !GameManager.isTutorialShown:

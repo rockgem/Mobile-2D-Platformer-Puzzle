@@ -46,6 +46,7 @@ func advanceToLevel():
 	currentLevel += 1
 	currentQuestionIndex = 0
 	get_tree().change_scene("res://scenes/Level %s.tscn" % str(GameManager.currentLevel))
+	
 
 
 func playerAnswered(answerRes):

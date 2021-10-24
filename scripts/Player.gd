@@ -89,6 +89,17 @@ func attack():
 		attacking = false
 
 func hit(enemy):
+	var distance_between = enemy.global_position.direction_to(global_position)
+	print(distance_between)
+	
+	if distance_between.x < 0.5:
+		$Tween.interpolate_property(self, "global_position", global_position, Vector2(global_position.x - 80, global_position.y), 0.3, Tween.TRANS_LINEAR,Tween.EASE_OUT)
+		$Tween.start()
+	elif distance_between.x > 0.5:
+		$Tween.interpolate_property(self, "global_position", global_position, Vector2(global_position.x + 80, global_position.y), 0.3, Tween.TRANS_LINEAR,Tween.EASE_OUT)
+		$Tween.start()
+	
+	
 	if !beingHit:
 		$Hit.play()
 		beingHit = true
