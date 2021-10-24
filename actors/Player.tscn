@@ -51,6 +51,11 @@ animations = [ {
 "name": "idle",
 "speed": 8.0
 }, {
+"frames": [ ExtResource( 11 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "run",
+"speed": 8.0
+}, {
 "frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
 "loop": true,
 "name": "hit",
@@ -59,11 +64,6 @@ animations = [ {
 "frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "attack",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "run",
 "speed": 8.0
 } ]
 
@@ -123,7 +123,6 @@ process_material = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "idle"
-frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

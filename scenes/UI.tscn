@@ -432,14 +432,14 @@ __meta__ = {
 position = Vector2( 118, 22 )
 frames = SubResource( 7 )
 animation = "goldSkull"
-frame = 3
+frame = 7
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="StoryPanel"]
 position = Vector2( 296, 22 )
 frames = SubResource( 7 )
 animation = "goldSkull"
-frame = 3
+frame = 7
 playing = true
 
 [node name="TutorialPanel" type="Panel" parent="."]
@@ -535,6 +535,7 @@ margin_left = 23.0
 margin_top = 39.0
 margin_right = 189.0
 margin_bottom = 93.0
+custom_styles/focus = ExtResource( 12 )
 custom_styles/normal = ExtResource( 12 )
 placeholder_text = "Name"
 __meta__ = {
