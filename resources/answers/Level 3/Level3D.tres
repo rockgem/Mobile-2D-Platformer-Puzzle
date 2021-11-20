@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource( 1 )
-answerKey = "ganoon"
+answerKey = "Ng"
 texture = ExtResource( 2 )
-meaning = ""
+meaning = "Isinusulat karugtong ng mga salitang nagtatapos sa patinig o vowel (a.e.i.o.u) at ginagamit ito upang pananda sa gumaganap ng pandiwa sa pangungusap. "

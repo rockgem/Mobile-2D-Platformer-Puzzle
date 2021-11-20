@@ -8,6 +8,6 @@
 
 [resource]
 script = ExtResource( 1 )
-question = [ "answer is A" ]
+question = [ "1. Nagising si Marco ___ tumilaok ang manok. ", "2. Masayang mag-alaga ng aso_____ maamo. ", "3. Nagtutulungan sila upang magawa ang tulay ___ bato. ", "4. Pinapulot ni Tiya Vilma ang mga dahon_____tuyo sa bakuran. ", "5. Bumili ___ bagong laptop si Anna. " ]
 answers = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ) ]
-correctAnswer = [ ExtResource( 3 ) ]
+correctAnswer = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ]

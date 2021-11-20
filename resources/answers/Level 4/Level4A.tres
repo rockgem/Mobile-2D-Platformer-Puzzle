@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource( 1 )
-answerKey = "Answer #1"
+answerKey = "Samantala"
 texture = ExtResource( 2 )
-meaning = ""
+meaning = "Ginagamit kapag tinutukoy moa ng isang maikling panahon. "

@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource( 1 )
-answerKey = "Answer #4"
+answerKey = "Upang"
 texture = ExtResource( 2 )
-meaning = ""
+meaning = "Ang upang ay ginagamit sa pag-uugnay ng parirala o sugnay na pinagsunod-sunod sa pangungusap."

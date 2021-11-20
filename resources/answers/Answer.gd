@@ -1,6 +1,6 @@
 extends Resource
 class_name Answer
 
-export(String) var answerKey = "Answer"
+export(String, MULTILINE) var answerKey = "Answer"
 export(Texture) var texture
-export(String) var meaning = "" 
+export(String, MULTILINE) var meaning = "" 

@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource( 1 )
-answerKey = "din"
+answerKey = "-g"
 texture = ExtResource( 2 )
-meaning = ""
+meaning = "Ang –g ay isinusulat karugtong ng mga salitang ng tatapos sa titik N. "

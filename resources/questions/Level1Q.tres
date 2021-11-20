@@ -8,6 +8,6 @@
 
 [resource]
 script = ExtResource( 1 )
-question = [ "1.Umiiyak ang sanggol ___________ nagugutom.", "2.Uuwi ako sa probinsya __________ hindi uulan sa sabado.", "3.Ang pagsayaw___________ pagkanta ang hilig gawin Romeo.", "4.__________ si Juan Dela Cruz ay naglalakad nakakita siya ng isang pamilyang masaya sa labas ng kanilang bahay.", "5.Ako’y  nasasaktan ___________ kapag kasama mo siya." ]
+question = [ "1. Pumunta tayo doon _________ tapos na ang pandemya. ", "2. Paano ________ mali ang sagot ko at magkamali tayo pareho? ", "3. Lapis, pambura _____ pantasa lang ang kailangan kong dalhin sa pagsusulit.", "4. Si Jennylyn ay nagmamadaling pumasok ng eskwelahan ________ gamit niya ang bisekletang bigay sa kanya ng ina. ", "5. Ako ay manunod sa Netflix _________ walang pasok bukas." ]
 answers = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 4 ) ]
-correctAnswer = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ) ]
+correctAnswer = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 3 ) ]

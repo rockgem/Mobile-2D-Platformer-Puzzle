@@ -65,7 +65,7 @@ func resetQuiz():
 		for i in range(0, GameManager.currentQuestion.answers.size()):
 			var prevHolder = $QuizPanel/AnswersGrid.get_child(i)
 			prevHolder.queue_free()
-			$QuizPanel/AnswersGrid.remove_child(prevHolder)
+#			$QuizPanel/AnswersGrid.remove_child(prevHolder)
 
 func _on_Close_pressed():
 	$Click.play()

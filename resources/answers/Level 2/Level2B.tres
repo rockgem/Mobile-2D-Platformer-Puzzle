@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource( 1 )
-answerKey = "Na-received"
+answerKey = "Rin"
 texture = ExtResource( 2 )
-meaning = ""
+meaning = "Ang rin ay ginagamit kapag ang sinundang salita ay nagtatapos sa patinig o ang mga malapatinig na y at w. "

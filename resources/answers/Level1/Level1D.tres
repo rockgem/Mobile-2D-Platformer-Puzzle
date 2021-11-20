@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource( 1 )
-answerKey = "Habang"
+answerKey = "At"
 texture = ExtResource( 2 )
-meaning = "Ang at ay pinapaikling 't kapag kasunod ng isang patinig."
+meaning = "Ang at ay ginagamit upang pag-ugnayin ang magkahiwalay na parirala,salita o halimbawa. "

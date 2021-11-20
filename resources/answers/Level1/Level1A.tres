@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource( 1 )
-answerKey = "Habang"
+answerKey = "Kung"
 texture = ExtResource( 2 )
-meaning = "Ipinakikilala ng kung ang di-katiyakan ng isang kalagayan."
+meaning = "Ang kung ay ginagamit na pangatnig sa mga sugnay na di makapag-isa sa mga pangungusap na hugnaya. "

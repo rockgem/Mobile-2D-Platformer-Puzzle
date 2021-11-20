@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource( 1 )
-answerKey = "Nareceive"
+answerKey = "Daw"
 texture = ExtResource( 2 )
-meaning = ""
+meaning = "Ang daw ay ginagamit kung ang sinusundang salita ay nagtatapos sa katinig (consonant). "

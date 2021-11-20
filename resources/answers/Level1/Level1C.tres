@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource( 1 )
-answerKey = "At"
+answerKey = "Habang"
 texture = ExtResource( 2 )
-meaning = "Ginagamit ang habang tuwing ang dalawang persona sa iyong pangungusap ay magkaiba ang ginagawa pero magkasabay nangyayari."
+meaning = "Ang habang ay isang kalagayang nagpapahiwatig ng walang tiyak na katapusano hangganan. "

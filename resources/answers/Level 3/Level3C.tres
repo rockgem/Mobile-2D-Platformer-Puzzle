@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource( 1 )
-answerKey = "rin"
+answerKey = "Nang"
 texture = ExtResource( 2 )
-meaning = ""
+meaning = "Ginagamit ang nang sa gitna ng mga pandiwang inuulit. "
