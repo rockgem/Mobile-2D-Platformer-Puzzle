@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://addons/silent_wolf/Scores/Leaderboard.gd" type="Script" id=1]
+[ext_resource path="res://images/prefabs/plank_1.png" type="Texture" id=2]
+[ext_resource path="res://resources/Panel3.tres" type="StyleBox" id=3]
 [ext_resource path="res://addons/silent_wolf/common/SWButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://resources/Font_2.tres" type="DynamicFont" id=5]
+[ext_resource path="res://resources/DefaultPanel.tres" type="StyleBox" id=6]
 
 [sub_resource type="Theme" id=1]
 
@@ -22,6 +26,28 @@ margin_left = 7.0
 margin_top = 4.0
 margin_right = 421.0
 margin_bottom = 237.0
+custom_styles/panel = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 34.0
+margin_top = 24.0
+margin_right = 396.0
+margin_bottom = 225.0
+custom_styles/panel = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 125.0
+margin_top = 2.0
+margin_right = 298.0
+margin_bottom = 65.0
+texture = ExtResource( 2 )
+stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -38,12 +64,13 @@ __meta__ = {
 
 [node name="TitleContainer" type="CenterContainer" parent="Board"]
 margin_right = 372.0
-margin_bottom = 27.0
+margin_bottom = 29.0
 
 [node name="Label" type="Label" parent="Board/TitleContainer"]
-margin_left = 154.0
-margin_right = 217.0
-margin_bottom = 27.0
+margin_left = 125.0
+margin_right = 247.0
+margin_bottom = 29.0
+custom_fonts/font = ExtResource( 5 )
 text = "Leaderboard"
 
 [node name="MessageContainer" type="CenterContainer" parent="Board"]
@@ -60,9 +87,9 @@ text = "Loading scores..."
 valign = 1
 
 [node name="HighScores" type="CenterContainer" parent="Board"]
-margin_top = 27.0
+margin_top = 29.0
 margin_right = 372.0
-margin_bottom = 177.0
+margin_bottom = 179.0
 rect_min_size = Vector2( 0, 150 )
 theme = SubResource( 1 )
 
@@ -73,9 +100,9 @@ margin_right = 186.0
 margin_bottom = 75.0
 
 [node name="CloseButtonContainer" type="CenterContainer" parent="Board"]
-margin_top = 177.0
+margin_top = 179.0
 margin_right = 372.0
-margin_bottom = 205.0
+margin_bottom = 207.0
 
 [node name="CloseButton" parent="Board/CloseButtonContainer" instance=ExtResource( 4 )]
 margin_left = 141.0

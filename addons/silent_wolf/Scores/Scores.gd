@@ -37,7 +37,7 @@ var scores_below  = []
 #var request_timer = null
 
 # latest number of scores to be fetched from the backend
-var latest_max = 10
+var latest_max = 5
 
 var ScorePosition = null
 var ScoresAround = null

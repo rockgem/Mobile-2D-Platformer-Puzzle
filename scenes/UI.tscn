@@ -1,15 +1,15 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://scripts/UI.gd" type="Script" id=1]
 [ext_resource path="res://actors/InventorySlot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://images/green_tick.png" type="Texture" id=3]
 [ext_resource path="res://images/sprites/blue_circle.png" type="Texture" id=4]
 [ext_resource path="res://scripts/TouchScreenButton.gd" type="Script" id=5]
-[ext_resource path="res://images/2.png" type="Texture" id=6]
+[ext_resource path="res://images/up_button.png" type="Texture" id=6]
 [ext_resource path="res://images/5.png" type="Texture" id=7]
-[ext_resource path="res://resources/Panel3.tres" type="StyleBox" id=8]
+[ext_resource path="res://images/prefabs/small_banner_1.png" type="Texture" id=8]
 [ext_resource path="res://images/hpbar/over.png" type="Texture" id=9]
-[ext_resource path="res://resources/fibberish.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://resources/Font_2.tres" type="DynamicFont" id=10]
 [ext_resource path="res://images/sprites/09-Idle Sword/Idle Sword 01.png" type="Texture" id=11]
 [ext_resource path="res://resources/Panel2.tres" type="StyleBox" id=12]
 [ext_resource path="res://images/hpbar/3.png" type="Texture" id=13]
@@ -52,18 +52,32 @@ animations = [ {
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
+[sub_resource type="Shader" id=13]
+code = "shader_type canvas_item;
+
+
+void fragment(){
+	vec4 col = textureLod(SCREEN_TEXTURE, SCREEN_UV, 1.0);
+	
+	COLOR = col;
+}"
+
+[sub_resource type="ShaderMaterial" id=14]
+shader = SubResource( 13 )
+
 [sub_resource type="CircleShape2D" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=5]
 
-[sub_resource type="DynamicFont" id=6]
-size = 24
-font_data = ExtResource( 10 )
-
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
+"frames": [ ExtResource( 29 ), ExtResource( 34 ), ExtResource( 27 ), ExtResource( 32 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "redPotion",
+"speed": 6.0
+}, {
 "frames": [ ExtResource( 40 ), ExtResource( 39 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 41 ), ExtResource( 31 ), ExtResource( 38 ), ExtResource( 37 ) ],
 "loop": true,
 "name": "goldSkull",
@@ -72,11 +86,6 @@ animations = [ {
 "frames": [ ExtResource( 21 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "goldCoin",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 29 ), ExtResource( 34 ), ExtResource( 27 ), ExtResource( 32 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 28 ) ],
-"loop": true,
-"name": "redPotion",
 "speed": 6.0
 } ]
 
@@ -136,7 +145,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 150, 184 )
 frames = SubResource( 1 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="GoldLabel" type="Label" parent="AnimatedSprite"]
@@ -331,8 +340,8 @@ __meta__ = {
 margin_left = 125.0
 margin_top = -132.0
 margin_right = 324.0
-margin_bottom = -4.0
-custom_styles/panel = ExtResource( 8 )
+margin_bottom = -4.00002
+custom_styles/panel = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -348,16 +357,66 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="GameoverPanel"]
-margin_left = 38.0
-margin_top = 34.0
-margin_right = 161.0
-margin_bottom = 61.0
-custom_colors/font_color = Color( 0.94902, 0.894118, 0.894118, 1 )
-text = "GAMEOVER!"
+margin_left = 49.0
+margin_top = -32.0
+margin_right = 102.0
+margin_bottom = -3.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.2, 0.196078, 0.239216, 1 )
+text = "Game"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label2" type="Label" parent="GameoverPanel"]
+margin_left = 103.0
+margin_top = -41.0
+margin_right = 156.0
+margin_bottom = -12.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.2, 0.196078, 0.239216, 1 )
+text = "Over"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="GameoverPanel"]
+margin_left = 43.0
+margin_top = 32.0
+margin_right = 148.0
+margin_bottom = 59.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.2, 0.196078, 0.239216, 1 )
+text = "Score: 999"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="GameoverPanel"]
+
+[node name="ColorRect" type="ColorRect" parent="GameoverPanel/CanvasLayer"]
+visible = false
+material = SubResource( 14 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="GameoverPanel"]
+show_behind_parent = true
+margin_left = 29.0
+margin_top = -51.0
+margin_right = 169.0
+margin_bottom = 7.0
+texture = ExtResource( 8 )
+stretch_mode = 6
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.313726 )
@@ -372,7 +431,8 @@ shape = SubResource( 3 )
 script = ExtResource( 5 )
 
 [node name="Jump" type="TouchScreenButton" parent="."]
-position = Vector2( 385, 185 )
+position = Vector2( 380, 184 )
+scale = Vector2( 1, 1 )
 normal = ExtResource( 6 )
 action = "ui_up"
 
@@ -397,7 +457,7 @@ margin_right = 358.0
 margin_bottom = 188.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = ExtResource( 10 )
 custom_colors/default_color = Color( 0.424805, 0.344638, 0.316944, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Noong 1519, nagsimulang maglakbay si Fernando de Magallanes mula sa Espanya upang isagawa ang unang paglalayag sa paligid ng mundo."
@@ -432,14 +492,12 @@ __meta__ = {
 position = Vector2( 118, 22 )
 frames = SubResource( 7 )
 animation = "goldSkull"
-frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="StoryPanel"]
 position = Vector2( 296, 22 )
 frames = SubResource( 7 )
 animation = "goldSkull"
-frame = 3
 playing = true
 
 [node name="TutorialPanel" type="Panel" parent="."]
@@ -605,6 +663,8 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="AlmanacPanel/ScrollContainer"]
+margin_right = 399.0
+size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -1,5 +1,7 @@
 extends Panel
 
+var almanac_holder = preload("res://actors/AlmanacHolder.tscn")
+
 func _ready():
 	Almanac.connect("word_added", self, "refresh")
 	GameManager.connect("playername_added", self, "nameUpdate")
@@ -21,13 +23,13 @@ func refresh():
 		child.queue_free()
 	
 	for i in Almanac.dict["storage"].size():
-		var lbl = Label.new()
+		var holder = almanac_holder.instance()
 		var string = Almanac.dict["storage"][i]
 		var string1 = string[0]
 		var string2 = string[1]
 		
-		lbl.text = string1 + " - " + string2
-		$ScrollContainer/GridContainer.add_child(lbl)
+		holder.text = string1 + " - " + string2
+		$ScrollContainer/GridContainer.add_child(holder)
 
 
 func _on_Close_pressed():

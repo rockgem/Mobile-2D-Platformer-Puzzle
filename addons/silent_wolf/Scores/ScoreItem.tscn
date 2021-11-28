@@ -20,12 +20,13 @@ __meta__ = {
 
 [node name="PlayerName" type="RichTextLabel" parent="."]
 margin_left = 6.0
-margin_top = 4.0
-margin_right = 76.0
+margin_top = 3.0
+margin_right = 102.0
 margin_bottom = 16.0
 custom_styles/focus = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
 text = "1. Godzilla"
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }

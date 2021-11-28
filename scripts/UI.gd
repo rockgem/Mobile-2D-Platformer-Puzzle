@@ -98,6 +98,7 @@ func showGameOver():
 	$Jump.hide()
 	$Attack.hide()
 	$ItemsPanel.hide()
+	$GameoverPanel/Label3.text = "Score: %s" % GameManager.score
 	$AnimationPlayer.play("gameOverFade")
 
 func showStoryDialog(is_intro: bool = false):
@@ -180,6 +181,8 @@ func _on_Menu_pressed():
 	$Click.play()
 	yield($Click, "finished")
 	SilentWolf.Scores.persist_score(GameManager.playerName, GameManager.score)
+	$GameoverPanel/CanvasLayer/ColorRect.show()
+	yield(SilentWolf.Scores, "sw_score_posted")
 	get_tree().change_scene("res://addons/silent_wolf/Scores/Leaderboard.tscn")
 
 
