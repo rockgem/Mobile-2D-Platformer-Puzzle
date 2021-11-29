@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://images/backgrounds/Background/BG Image.png" type="Texture" id=1]
 [ext_resource path="res://images/backgrounds/Background/Big Clouds.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://music/Sword10.wav" type="AudioStream" id=9]
 [ext_resource path="res://music/Click4.wav" type="AudioStream" id=10]
 [ext_resource path="res://images/button.png" type="Texture" id=11]
+[ext_resource path="res://images/x_icon.png" type="Texture" id=12]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -106,25 +107,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Close" type="Button" parent="SettingsPanel"]
-anchor_left = 0.505
-anchor_top = 1.0
-anchor_right = 0.505
-anchor_bottom = 1.0
-margin_left = -31.135
-margin_top = -44.0
-margin_right = 30.865
-margin_bottom = -16.0
-text = "Close"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Close" type="TextureButton" parent="SettingsPanel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -35.0
+margin_top = 13.0
+margin_right = -11.0
+margin_bottom = 37.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 12 )
+expand = true
+stretch_mode = 5
 
 [node name="MasterSlider" type="HSlider" parent="SettingsPanel"]
 margin_left = 101.0
-margin_top = 19.0
+margin_top = 49.0
 margin_right = 317.0
-margin_bottom = 61.0
+margin_bottom = 91.0
 max_value = 1.0
 step = 0.01
 value = 1.0
@@ -134,18 +134,18 @@ __meta__ = {
 
 [node name="SFXSlider" type="HSlider" parent="SettingsPanel"]
 margin_left = 101.0
-margin_top = 69.0
+margin_top = 99.0
 margin_right = 317.0
-margin_bottom = 111.0
+margin_bottom = 141.0
 max_value = 1.0
 step = 0.01
 value = 1.0
 
 [node name="Label" type="Label" parent="SettingsPanel"]
 margin_left = 21.0
-margin_top = 27.0
+margin_top = 57.0
 margin_right = 96.0
-margin_bottom = 54.0
+margin_bottom = 84.0
 text = "Master Volume:"
 align = 2
 __meta__ = {
@@ -154,9 +154,9 @@ __meta__ = {
 
 [node name="Label2" type="Label" parent="SettingsPanel"]
 margin_left = 21.0
-margin_top = 77.0
+margin_top = 107.0
 margin_right = 96.0
-margin_bottom = 104.0
+margin_bottom = 134.0
 text = "SFX:"
 align = 2
 __meta__ = {
