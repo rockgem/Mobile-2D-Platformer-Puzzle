@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BALARILA.png-5b0a7514622e3805818ae735a688bad2.stex"
+path="res://.import/Legends.png-7198eea99818cd12f0b17d8ea9a2e96a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/BALARILA.png"
-dest_files=[ "res://.import/BALARILA.png-5b0a7514622e3805818ae735a688bad2.stex" ]
+source_file="res://images/Legends.png"
+dest_files=[ "res://.import/Legends.png-7198eea99818cd12f0b17d8ea9a2e96a.stex" ]
 
 [params]
 
