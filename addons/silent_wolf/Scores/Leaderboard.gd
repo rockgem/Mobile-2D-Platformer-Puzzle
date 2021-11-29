@@ -36,8 +36,14 @@ func render_board(scores, local_scores):
 	else:
 		if !scores:
 			add_no_scores_message()
+	
+	# rock's changes cause fuck this dumbass plugin
+	var count = 0
 	for score in scores:
-		add_item(score.player_name, str(int(score.score)))
+		if count < 5:
+			add_item(score.player_name, str(int(score.score)))
+			
+			count += 1
 		
 func is_default_leaderboard(ld_config):
 	var default_insert_opt = (ld_config.insert_opt == "keep")

@@ -111,8 +111,8 @@ func get_scores_around(score, scores_to_fetch=3, ldboard_name="main"):
 	send_get_request(ScoresAround, request_url)
 	return self
 
-func get_high_scores(maximum=10, ldboard_name="main", period_offset=0):
-	maximum = maximum + 8
+func get_high_scores(maximum=5, ldboard_name="main", period_offset=0):
+	maximum = maximum
 	HighScores = HTTPRequest.new()
 	wrHighScores = weakref(HighScores)
 	if OS.get_name() != "HTML5":

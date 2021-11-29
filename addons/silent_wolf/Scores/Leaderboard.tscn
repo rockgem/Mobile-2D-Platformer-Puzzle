@@ -102,11 +102,10 @@ margin_bottom = 75.0
 [node name="CloseButtonContainer" type="CenterContainer" parent="Board"]
 margin_top = 179.0
 margin_right = 372.0
-margin_bottom = 207.0
+margin_bottom = 203.0
 
 [node name="CloseButton" parent="Board/CloseButtonContainer" instance=ExtResource( 4 )]
-margin_left = 141.0
-margin_right = 230.0
-text = "Close Leaderboard"
+margin_left = 174.0
+margin_right = 198.0
 
 [connection signal="pressed" from="Board/CloseButtonContainer/CloseButton" to="." method="_on_CloseButton_pressed"]
