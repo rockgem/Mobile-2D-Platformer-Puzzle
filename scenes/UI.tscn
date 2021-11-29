@@ -78,14 +78,14 @@ shader = SubResource( 3 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 40 ), ExtResource( 39 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 41 ), ExtResource( 31 ), ExtResource( 38 ), ExtResource( 37 ) ],
-"loop": true,
-"name": "goldSkull",
-"speed": 6.0
-}, {
 "frames": [ ExtResource( 21 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "goldCoin",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 40 ), ExtResource( 39 ), ExtResource( 35 ), ExtResource( 30 ), ExtResource( 41 ), ExtResource( 31 ), ExtResource( 38 ), ExtResource( 37 ) ],
+"loop": true,
+"name": "goldSkull",
 "speed": 6.0
 }, {
 "frames": [ ExtResource( 29 ), ExtResource( 34 ), ExtResource( 27 ), ExtResource( 32 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 28 ) ],
@@ -150,7 +150,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 150, 184 )
 frames = SubResource( 1 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="GoldLabel" type="Label" parent="AnimatedSprite"]
@@ -261,30 +261,47 @@ margin_right = 140.0
 
 [node name="QuizPanel" type="Panel" parent="."]
 visible = false
-margin_left = 38.0
-margin_top = 19.0
-margin_right = 380.0
-margin_bottom = 233.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 57.0
+margin_top = 31.0
+margin_right = -65.0
+margin_bottom = -5.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureRect" type="TextureRect" parent="QuizPanel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -88.0
+margin_top = -44.0
+margin_right = 87.0
+margin_bottom = 46.0
+texture = ExtResource( 44 )
+expand = true
+stretch_mode = 6
+
 [node name="QuizTitle" type="Label" parent="QuizPanel"]
-margin_left = 113.0
-margin_top = 11.0
-margin_right = 234.0
-margin_bottom = 38.0
-text = "Example Question:"
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -60.658
+margin_top = -17.0
+margin_right = 60.342
+margin_bottom = 12.0
+custom_fonts/font = ExtResource( 10 )
+text = "Question:"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="QuizQuestion" type="Label" parent="QuizPanel"]
-margin_left = 49.0
-margin_top = 40.0
-margin_right = 291.0
-margin_bottom = 125.0
+anchor_right = 1.0
+margin_left = 17.0
+margin_top = 31.0
+margin_right = -13.0
+margin_bottom = 111.0
 text = "What is 1+1?"
 align = 1
 autowrap = true
@@ -292,21 +309,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Close" type="Button" parent="QuizPanel"]
-margin_left = 11.5
-margin_top = 9.5
-margin_right = 77.5
-margin_bottom = 29.5
-text = "Close"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Close" type="TextureButton" parent="QuizPanel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -34.0
+margin_top = 6.0
+margin_right = -10.0
+margin_bottom = 30.0
+texture_normal = ExtResource( 45 )
+texture_pressed = ExtResource( 45 )
+texture_hover = ExtResource( 45 )
+expand = true
+stretch_mode = 5
 
 [node name="AnswersGrid" type="GridContainer" parent="QuizPanel"]
-margin_left = 29.0
-margin_top = 110.0
-margin_right = 314.0
-margin_bottom = 184.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 21.0
+margin_top = -86.0
+margin_right = -23.0
+margin_bottom = -7.0
 columns = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -527,14 +550,12 @@ __meta__ = {
 position = Vector2( 118, 22 )
 frames = SubResource( 8 )
 animation = "goldSkull"
-frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="StoryPanel"]
 position = Vector2( 296, 22 )
 frames = SubResource( 8 )
 animation = "goldSkull"
-frame = 3
 playing = true
 
 [node name="TutorialPanel" type="Panel" parent="."]
