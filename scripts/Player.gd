@@ -47,7 +47,7 @@ func _physics_process(delta):
 		GlobalPlayer.velocity.x = 0
 	
 	# movement for mobile version
-	GlobalPlayer.velocity = move_and_slide(Vector2(joystick.getValue().x * GlobalPlayer.moveSpeed, GlobalPlayer.velocity.y))
+#	GlobalPlayer.velocity = move_and_slide(Vector2(joystick.getValue().x * GlobalPlayer.moveSpeed, GlobalPlayer.velocity.y))
 	
 	if GlobalPlayer.velocity.x > 0 && !attacking && !beingHit:
 		$AttackPivot.rotation = 0
@@ -64,7 +64,7 @@ func _physics_process(delta):
 		walking = false
 	
 	# player movement handler with keyboard
-	#GlobalPlayer.velocity = move_and_slide(GlobalPlayer.velocity)
+	GlobalPlayer.velocity = move_and_slide(GlobalPlayer.velocity)
 
 
 func _input(event):

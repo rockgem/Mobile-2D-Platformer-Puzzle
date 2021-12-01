@@ -69,6 +69,52 @@ position = Vector2( 265, 94 )
 texture = ExtResource( 4 )
 centered = false
 
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -88.0
+margin_top = -91.0
+margin_right = 88.0
+margin_bottom = -63.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="TextureButton" parent="HBoxContainer"]
+margin_left = 62.0
+margin_right = 86.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 24, 24 )
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 13 )
+expand = true
+stretch_mode = 5
+
+[node name="Load" type="Button" parent="HBoxContainer"]
+visible = false
+margin_left = 28.0
+margin_right = 54.0
+margin_bottom = 28.0
+text = "Load"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="TextureButton" parent="HBoxContainer"]
+margin_left = 90.0
+margin_right = 114.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 24, 24 )
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 14 )
+expand = true
+stretch_mode = 5
+
 [node name="Settings" type="TextureButton" parent="."]
 margin_left = 383.0
 margin_top = 3.0
@@ -118,7 +164,6 @@ texture = ExtResource( 25 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 258, 72 )
 frames = SubResource( 1 )
-frame = 3
 playing = true
 
 [node name="SettingsPanel" type="Panel" parent="."]
@@ -173,6 +218,7 @@ margin_left = 21.0
 margin_top = 57.0
 margin_right = 96.0
 margin_bottom = 84.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Master Volume:"
 align = 2
 __meta__ = {
@@ -184,6 +230,7 @@ margin_left = 21.0
 margin_top = 107.0
 margin_right = 96.0
 margin_bottom = 134.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "SFX:"
 align = 2
 __meta__ = {
@@ -223,57 +270,11 @@ bus = "SFX"
 [node name="Click2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -88.0
-margin_top = -91.0
-margin_right = 88.0
-margin_bottom = -63.0
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Play" type="TextureButton" parent="HBoxContainer"]
-margin_left = 62.0
-margin_right = 86.0
-margin_bottom = 28.0
-rect_min_size = Vector2( 24, 24 )
-texture_normal = ExtResource( 13 )
-texture_pressed = ExtResource( 13 )
-texture_hover = ExtResource( 13 )
-expand = true
-stretch_mode = 5
-
-[node name="Load" type="Button" parent="HBoxContainer"]
-visible = false
-margin_left = 28.0
-margin_right = 54.0
-margin_bottom = 28.0
-text = "Load"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Quit" type="TextureButton" parent="HBoxContainer"]
-margin_left = 90.0
-margin_right = 114.0
-margin_bottom = 28.0
-rect_min_size = Vector2( 24, 24 )
-texture_normal = ExtResource( 14 )
-texture_pressed = ExtResource( 14 )
-texture_hover = ExtResource( 14 )
-expand = true
-stretch_mode = 5
-
+[connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="HBoxContainer/Load" to="." method="_on_Load_pressed"]
+[connection signal="pressed" from="HBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="SettingsPanel/Close" to="." method="_on_Close_pressed"]
 [connection signal="value_changed" from="SettingsPanel/MasterSlider" to="." method="_on_MasterSlider_value_changed"]
 [connection signal="value_changed" from="SettingsPanel/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
 [connection signal="pressed" from="Leaderboard" to="." method="_on_Leaderboard_pressed"]
-[connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_Play_pressed"]
-[connection signal="pressed" from="HBoxContainer/Load" to="." method="_on_Load_pressed"]
-[connection signal="pressed" from="HBoxContainer/Quit" to="." method="_on_Quit_pressed"]

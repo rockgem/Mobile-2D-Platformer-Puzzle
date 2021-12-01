@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource( 1 )
-text = [ "Noong 1519, nagsimulang maglakbay si Fernando de Magallanes mula sa Espanya upang isagawa ang unang paglalayag sa paligid ng mundo.", "Ang panggagalugad ni Magallanes ay binubuo ng limang mga barko tinatawag na San Antonio, Santiago, Concepcion, Victoria, at Trinidad na mayroong 264 mga tauhang mandaragat.", "Kinakailangang hanapin ang mga sagradong libro na magbubukas sa mga nakatagong kaisipan na mauugnay sa wika at kasaysayan ng Pilipinas." ]
+text = [ "Noong [color=#f7ec9b]1519[/color], nagsimulang maglakbay si [color=#f7ec9b]Fernando de Magallanes[/color] mula sa Espanya upang isagawa ang unang paglalayag sa paligid ng mundo.", "Ang panggagalugad ni Magallanes ay binubuo ng limang mga barko tinatawag na [color=#f7ec9b]San Antonio, Santiago, Concepcion, Victoria, at Trinidad[/color] na mayroong 264 mga tauhang mandaragat.", "Kinakailangang hanapin ang mga [color=#f7ec9b]sagradong libro[/color] na magbubukas sa mga nakatagong kaisipan na mauugnay sa wika at kasaysayan ng Pilipinas." ]
