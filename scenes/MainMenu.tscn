@@ -164,6 +164,7 @@ texture = ExtResource( 25 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 258, 72 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="SettingsPanel" type="Panel" parent="."]

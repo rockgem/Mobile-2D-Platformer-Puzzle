@@ -8,6 +8,6 @@
 
 [resource]
 script = ExtResource( 1 )
-question = [ "1.  Magsasanay ako tuwing hapon ________ gumaling ako sa pagtugtog ng piyano. ", "2. Hindi ako nakatulog kagabi ________ masyadong maingay ang aking kapitbahay. ", "3. Wala kang ginagawa diyan ___ kanina pa abalang-abala sa pagluluto ang nanay mo. ", "4. Si Patrick ang titingin sa mapa _____nagmamaneho si Gary. ", "5. Ang aso ang tumatahol ___ may pusang itim. " ]
+question = [ "1.  Pinalitan ni Lope Santos ang unang titik ng kanyang panggitnang pangalan _______ isunod ito sa bigkas ng Tagalog o Filipino.", "2. Si Mamerto Paglinawan ay nakilala _____ sa aklat niyang Balarilang Tagalog.", "3. Si Mamerto Paglinawan ay kilala bilang unang gumamit ng salitang Balarila, ______ si Lope K. Santos naman ay kilala bilang Ama ng Pambansang Wika at Balarila.", "4. ______ nasa murang edad si Lope K. Santos ay nakitaan na siya ng pagkahilig sa pagsusuri ng mga bagay-bagay. ", "5. Naging popular ba ang librong isinulat ni Mamerto _____ sa paggamit ng aklat ni Lope K. Santos?" ]
 answers = [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ]
-correctAnswer = [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ) ]
+correctAnswer = [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]

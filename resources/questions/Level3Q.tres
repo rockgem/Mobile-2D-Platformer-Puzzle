@@ -8,6 +8,6 @@
 
 [resource]
 script = ExtResource( 1 )
-question = [ "1. Nagising si Marco ___ tumilaok ang manok. ", "2. Masayang mag-alaga ng aso_____ maamo. ", "3. Nagtutulungan sila upang magawa ang tulay ___ bato. ", "4. Pinapulot ni Tiya Vilma ang mga dahon_____tuyo sa bakuran. ", "5. Bumili ___ bagong laptop si Anna. " ]
+question = [ "1.	Iniulat ___ ang unang gumamit ng salitang Balarila ay walang iba kundi si Mamerto ", "2.	Tinulungan ni Magallanes si Lapu- Lapu, ang Datu ___ pulo ng mactan. ", "3.	Noong 1519, sinimulan____ maglakbay ni Fernando Magallanes. ", "4.	Ang paggagalugad ni Magallanes ay binubuo ____ limang barko.", "5.	Mayroong 264 na mga tauhan ____ mandaragat ang barkong Trinidad." ]
 answers = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ) ]
-correctAnswer = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ]
+correctAnswer = [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 3 ) ]

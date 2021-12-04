@@ -8,6 +8,6 @@
 
 [resource]
 script = ExtResource( 1 )
-question = [ "1. Pumunta tayo doon _________ tapos na ang pandemya. ", "2. Paano ________ mali ang sagot ko at magkamali tayo pareho? ", "3. Lapis, pambura _____ pantasa lang ang kailangan kong dalhin sa pagsusulit.", "4. Si Jennylyn ay nagmamadaling pumasok ng eskwelahan ________ gamit niya ang bisekletang bigay sa kanya ng ina. ", "5. Ako ay manunod sa Netflix _________ walang pasok bukas." ]
+question = [ "1. Narating ni Magellan ang Pilipinas _______ siya ay naglalayag noong 1521. ", "2. Ang pangalan ng limang barko na ginamit ni Magellan sa paglalayag ay Santiago, San Antonio, Conception, Trinidad ____ Victoria.", "3. Si Magellan __ ang kanyang mga kasama ay ang unang nag layag sa mundo gamit ang barko.", "4.  _______ naglalayag si Magellan, ang kanyang kasama naman na si Antonio Pigafetta ay isinusulat ang mga pangyayari. ", "5. Isa sa paniniwala ng Kristiyanismo ay  ___ nakita mo raw ang imahen Ng Sto. Niño, ito ay simbolo ng kapayapaan. " ]
 answers = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 4 ) ]
-correctAnswer = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 3 ) ]
+correctAnswer = [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ) ]

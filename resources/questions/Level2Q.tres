@@ -8,6 +8,6 @@
 
 [resource]
 script = ExtResource( 1 )
-question = [ "1. Nais ___ magpunta ni Rhea sa palengke. ", "2. Humiwalay ___ ang grupo nina Bea sa grupo nina Ben. ", "3. Sa dagat ___ maliligo ang mga dalaga. ", "4. Baket ___ palagi kang nahuhuli sa trabaho? ", "5. Siya ___ ang gagawa ng ating pintuan. " ]
+question = [ "1. Ang asawa ni Raja Humabon na si Hara Aminhasa ay kabilang ____ sa nabinyagan bilang Kristiyanismo.", "2. Ang pagtayo ng krus sa bayan ng Cebu ay iniutos _____ ni Magallanes.", "3. Ayon sa isinulat ni Pigafetta, sa Mactan ___ nangyari ang digmaan sa pagitan nina Magallanes at Datu Lapu-Lapu.", "4. Naging magkasundo ___ sina Magallanes at Datu Lapu-Lapu sa huli?", "5. Isinagawa ___ dito ang pagbibinyag sa mga katutubo ng Cebu noong Abril 14, 1521." ]
 answers = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ) ]
-correctAnswer = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 3 ) ]
+correctAnswer = [ ExtResource( 4 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 3 ) ]

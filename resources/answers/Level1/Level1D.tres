@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource( 1 )
-answerKey = "At"
+answerKey = "AT"
 texture = ExtResource( 2 )
 meaning = "Ang at ay ginagamit upang pag-ugnayin ang magkahiwalay na parirala,salita o halimbawa. "
